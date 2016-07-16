@@ -102,17 +102,69 @@ List
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="generaltaglist" name="generaltaglist">
-    General Equipment
-Tags
-   </a>
-  </h3>
+  <h3>General tag list</h3>
+  <ul>
+    <li><a href="#baseitem">BASEITEM</a></li>
+    <li><a href="#baseqty">BASEQTY</a></li>
+    <li><a href="#contains">CONTAINS</a></li>
+    <li><a href="#cost">COST</a></li>
+    <li><a href="#edr">EDR</a></li>
+    <li><a href="#eqmod">EQMOD</a></li>
+    <li><a href="#icon">ICON</a></li>
+    <li><a href="#mods">MODS</a></li>
+    <li><a href="#numpages">NUMPAGES</a></li>
+    <li><a href="#pageusage">PAGEUSAGE</a></li>
+    <li><a href="#pretype">PRETYPE</a></li>
+    <li><a href="#quality">QUALITY</a></li>
+    <li><a href="#size">SIZE</a></li>
+    <li><a href="#slots">SLOTS</a></li>
+    <li><a href="#sprop">SPROP</a></li>
+    <li><a href="#wt">WT</a></li>
+</ul>
+<h3>Weapon and armour tag list</h3>
   <p>
-   The following tags may be used in all equipment.
+   The following tags are for equipment with TYPE:Weapon,
+TYPE:Armor, or TYPE:Shield.
   </p>
+  <p class="indent0">
+   <strong>
+    Notes:
+   </strong>
+  </p>
+  <ul class="indent1">
+   <li>
+    Every TYPE:Weapon item must be also have either TYPE:Melee or
+TYPE:Ranged.
+    <br/>
+   </li>
+   <li>
+    Armor items should also have the type of SLOTS it takes up.
+This is usually TYPE:Suit
+   </li>
+  </ul>
+<ul>
+  <li><a href="#accheck">ACCHECK</a></li>
+    <li><a href="#altcritmult">ALTCRITMULT</a></li>
+    <li><a href="#altcritrange">ALTCRITRANGE</a></li>
+    <li><a href="#altdamage">ALTDAMAGE</a></li>
+    <li><a href="#alteqmod">ALTEQMOD</a></li>
+    <li><a href="#alttype">ALTTYPE</a></li>
+    <li><a href="#critmult">CRITMULT</a></li>
+    <li><a href="#critrange">CRITRANGE</a></li>
+    <li><a href="#damage">DAMAGE</a></li>
+    <li><a href="#fumblerange">FUMBLERANGE</a></li>
+    <li><a href="#maxdex">MAXDEX</a></li>
+    <li><a href="#proficiency">PROFICIENCY</a></li>
+    <li><a href="#range">RANGE</a></li>
+    <li><a href="#rateoffire">RATEOFFIRE</a></li>
+    <li><a href="#reach">REACH</a></li>
+    <li><a href="#reachmult">REACHMULT</a></li>
+    <li><a href="#spellfailure">SPELLFAILURE</a></li>
+    <li><a href="#wield">WIELD</a></li>
+  </ul>
+
   <hr/>
+  <div id="tag_docs">
   <p class="indent0">
    <strong>
     <a id="baseitem" name="baseitem">
@@ -1303,32 +1355,7 @@ equal to zero (0) for the weight.
    Item weighs 5 lbs.
   </p>
   <hr/>
-  <h3>
-   <a id="weaponarmortaglist" name="weaponarmortaglist">
-    Weapon/Armor Tags
-   </a>
-  </h3>
-  <p>
-   The following tags are for equipment with TYPE:Weapon,
-TYPE:Armor, or TYPE:Shield.
-  </p>
-  <p class="indent0">
-   <strong>
-    Notes:
-   </strong>
-  </p>
-  <ul class="indent1">
-   <li>
-    Every TYPE:Weapon item must be also have either TYPE:Melee or
-TYPE:Ranged.
-    <br/>
-   </li>
-   <li>
-    Armor items should also have the type of SLOTS it takes up.
-This is usually TYPE:Suit
-   </li>
-  </ul>
-  <hr/>
+  
   <p class="indent0">
    <strong>
     <a id="accheck" name="accheck">
@@ -2213,5 +2240,6 @@ category 'TwoHanded' for a Medium sized PC.
   <hr/>
   <p>
   </p>
+  </div>
  </body>
 </html>

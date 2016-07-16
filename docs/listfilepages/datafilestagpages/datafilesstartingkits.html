@@ -217,6 +217,110 @@
 <h2>
 <a name="dictionary" id="dictionary">Starting Kit Tag Dictionary</a>
 </h2>
+<h2>Line Header Tags</h2>
+<p>Each of the tags in this section will be the first tag on their respective line.</p>
+<ul>
+<li><a href="#startpack">STARTPACK</a></li>
+<li><a href="#category">CATEGORY</a></li>
+<li><a href="#age">AGE</a></li>
+<li><a href="#align">ALIGN</a></li>
+<li><a href="#class">CLASS</a></li>
+<li><a href="#deity">DEITY</a></li>
+<li><a href="#domain">DOMAIN</a></li>
+<li><a href="#funds">FUNDS</a></li>
+<li><a href="#gear">GEAR</a></li>
+<li><a href="#gender">GENDER</a></li>
+<li><a href="#langbonus">LANGBONUS</a></li>
+<li><a href="#levelability">LEVELABILITY</a></li>
+<li><a href="#name">NAME</a></li>
+<li><a href="#prof">PROF</a></li>
+<li><a href="#race">RACE</a></li>
+<li><a href="#select">SELECT</a></li>
+<li><a href="#skill">SKILL</a></li>
+<li><a href="#spells">SPELLS</a></li>
+<li><a href="#spellsspellbook">SPELLSSPELLBOOK</a></li>
+<li><a href="#stat">STAT</a></li>
+<li><a href="#subclass">SUBCLASS</a></li>
+<li><a href="#table">TABLE</a></li>
+<li><a href="#template">TEMPLATE</a></li>
+</ul>
+<h3>Misc Tags</h3>
+<ul>
+<li><a href="#ability">ABILITY</a></li>
+<li><a href="#apply">APPLY</a></li>
+<li><a href="#count">COUNT</a></li>
+<li><a href="#eqmod">EQMOD</a></li>
+<li><a href="#equipbuy">EQUIPBUY</a></li>
+<li><a href="#free">FREE</a></li>
+<li><a href="#level">LEVEL</a></li>
+<li><a href="#location">LOCATION</a></li>
+<li><a href="#lookup">LOOKUP</a></li>
+<li><a href="#maxcost">MAXCOST</a></li>
+<li><a href="#option">OPTION</a></li>
+<li><a href="#qty">QTY</a></li>
+<li><a href="#racial">RACIAL</a></li>
+<li><a href="#rank">RANK</a></li>
+<li><a href="#selection">SELECTION</a></li>
+<li><a href="#size">SIZE</a></li>
+<li><a href="#totalcost">TOTALCOST</a></li>
+<li><a href="#values">VALUES</a></li>
+<li><a href="#visible">VISIBLE</a></li>
+</ul>
+<hr />
+<h3 id="feat">FEAT</h3>
+<ul>
+<li>6.05.04 (July 2015): JIRA 
+<a href="http://jira.pcgen.org/browse/NEWTAG-477">NEWTAG-477</a> / Github 
+<a href="https://github.com/PCGen/pcgen/pull/380">PR #380</a></li>
+<li style="list-style: none; display: inline">
+<ul class="incremental">
+<li>The 
+<code>FEAT</code> tag is deprecated. Use 
+<a href="#category">
+<code>ABILITY</code>
+</a> instead.</li>
+<li>All 
+<code>FEAT</code> tags have been 
+<strong>deprecated</strong> and replaced by the 
+<code>ABILITY</code> system, which is more general. The 
+<code>ABILITY</code> system can model feats, racial features, class features, traits, flaws, temporary bonuses, and so on, all using a common format.</li>
+</ul>
+</li>
+</ul>
+<div class="deprecated">** Updated 5.9.7
+<p class="indent0">
+<strong>Tag Name:</strong> FEAT:x|x</p>
+<p class="indent1">
+<strong>Variables Used (x):</strong> Text (Feat name)</p>
+<p class="indent1">
+<strong>Variables Used (x):</strong> TYPE=Text (Feat TYPE)</p>
+<p class="indent1">
+<strong>What it does:</strong>
+</p>
+<ul class="indent2">
+<li>A pipe (|) delimited list of feats.</li>
+<li>Presents the list as a choice to the user.</li>
+<li>Grants the chosen feats.</li>
+</ul>
+<p class="indent1">
+<strong>Examples:</strong>
+</p>
+<p class="indent2">
+<code>FEAT:Weapon Focus (Greataxe)</code>
+</p>
+<p class="indent3">Would grant the &quot;Greataxe Weapon Focus&quot; feat.</p>
+<p class="indent2">
+<code>FEAT:Dodge PRESTAT:1,DEX=13</code>
+</p>
+<p class="indent3">Would grant &quot;Dodge&quot; if the character has a Dexterity of at least 13.</p>
+<p class="indent2">
+<code>FEAT:Dodge|Improved Initiative</code>
+</p>
+<p class="indent3">Would grant the choice of Dodge or Improved Initiative.</p>
+<p class="indent2">
+<code>FEAT:TYPE=ItemCreation</code>
+</p>
+<p class="indent3">Would grant the choice of an ItemCreation type feat.</p></div>
 <hr />
 <h3>
 <a name="regiontags" id="regiontags">The Region Tag</a>
@@ -249,11 +353,7 @@
 </p>
 <p class="indent3">There is no region prerequisite for these kits.</p>
 <hr />
-<h3>
-<a name="linehdrtags" id="linehdrtags">Line Header Tags</a>
-</h3>
-<p class="indent0">Each of the tags in this section will be the first tag on their respective line.</p>
-<hr />
+<div id="tag_docs">
 <p class="indent0">
 <strong>
 <a name="startpack" id="startpack">Tag Name:</a>
@@ -437,61 +537,7 @@
 <code>DOMAIN:Animal</code>
 </p>
 <p class="indent3">Sets the character&#39;s Domain to &quot;Animal&quot; if qualified.</p>
-<hr />
-<h3 id="feat">FEAT</h3>
-<ul>
-<li>6.05.04 (July 2015): JIRA 
-<a href="http://jira.pcgen.org/browse/NEWTAG-477">NEWTAG-477</a> / Github 
-<a href="https://github.com/PCGen/pcgen/pull/380">PR #380</a></li>
-<li style="list-style: none; display: inline">
-<ul class="incremental">
-<li>The 
-<code>FEAT</code> tag is deprecated. Use 
-<a href="#category">
-<code>ABILITY</code>
-</a> instead.</li>
-<li>All 
-<code>FEAT</code> tags have been 
-<strong>deprecated</strong> and replaced by the 
-<code>ABILITY</code> system, which is more general. The 
-<code>ABILITY</code> system can model feats, racial features, class features, traits, flaws, temporary bonuses, and so on, all using a common format.</li>
-</ul>
-</li>
-</ul>
-<div class="deprecated">** Updated 5.9.7
-<p class="indent0">
-<strong>Tag Name:</strong> FEAT:x|x</p>
-<p class="indent1">
-<strong>Variables Used (x):</strong> Text (Feat name)</p>
-<p class="indent1">
-<strong>Variables Used (x):</strong> TYPE=Text (Feat TYPE)</p>
-<p class="indent1">
-<strong>What it does:</strong>
-</p>
-<ul class="indent2">
-<li>A pipe (|) delimited list of feats.</li>
-<li>Presents the list as a choice to the user.</li>
-<li>Grants the chosen feats.</li>
-</ul>
-<p class="indent1">
-<strong>Examples:</strong>
-</p>
-<p class="indent2">
-<code>FEAT:Weapon Focus (Greataxe)</code>
-</p>
-<p class="indent3">Would grant the &quot;Greataxe Weapon Focus&quot; feat.</p>
-<p class="indent2">
-<code>FEAT:Dodge PRESTAT:1,DEX=13</code>
-</p>
-<p class="indent3">Would grant &quot;Dodge&quot; if the character has a Dexterity of at least 13.</p>
-<p class="indent2">
-<code>FEAT:Dodge|Improved Initiative</code>
-</p>
-<p class="indent3">Would grant the choice of Dodge or Improved Initiative.</p>
-<p class="indent2">
-<code>FEAT:TYPE=ItemCreation</code>
-</p>
-<p class="indent3">Would grant the choice of an ItemCreation type feat.</p></div>
+
 <hr />
 <p class="lststatus">
 <a name="funds" id="funds">*** New 5.8</a>
@@ -891,10 +937,6 @@
 <code>TEMPLATE:Celestial</code>
 </p>
 <p class="indent3">Adds the &quot;Celestial&quot; template to the character.</p>
-<hr />
-<h3>
-<a name="misctags" id="misctags">Miscellaneous Tags</a>
-</h3>
 <hr />
 <p class="lststatus">
 <a name="ability" id="ability">*** New 5.9.7</a>
@@ -1509,6 +1551,6 @@
 <strong>Where it is used:</strong>
 </p>
 <p class="indent2">STARTPACK lines</p>
-<hr />
+</div>
 </body>
 </html>
