@@ -47,6 +47,7 @@ tags whether global or not.
    Miscellaneous Tags
   </h2>
   <hr/>
+  <div id="tag_docs">
   <p class="lstupnew">
    <a id="ability" name="ability">
     *** Updated
@@ -191,7 +192,7 @@ and FEATAUTO.
    </strong>
    activate a CHOOSER inside of a feat. You
 must use
-   <a href="globalfilesadd.html#feat|">
+   <a href="globalfilesadd.html#feat">
     ADD:FEAT
    </a>
    to
@@ -470,10 +471,18 @@ equipment item if the character has a level of Monk and a DEX score
 of 15 or better.
   </p>
   <hr/>
-  <h3 id="autofeat">
-   AUTO:FEAT
-  </h3>
-  <ul>
+    <a id="autofeat" name="autofeat" />
+   <p class="lstupnew">
+    *** Updated 5.17.4
+   </p>
+   <p class="indent0">
+    <strong>
+     Tag Name:
+    </strong>
+    AUTO:FEAT|x|x
+   </p>
+   <p class="indent1"><strong>Status:</strong></p>
+   <ul>
    <li>
     6.05.04 (July 2015): JIRA
     <a href="http://jira.pcgen.org/browse/NEWTAG-477">
@@ -512,16 +521,6 @@ common format.
     </ul>
    </li>
   </ul>
-  <div class="deprecated">
-   <p class="lstupnew">
-    *** Updated 5.17.4
-   </p>
-   <p class="indent0">
-    <strong>
-     Tag Name:
-    </strong>
-    AUTO:FEAT|x|x
-   </p>
    <p class="indent1">
     <strong>
      Variables Used (x):
@@ -581,7 +580,7 @@ cross-level interaction.)
     </strong>
     activate a CHOOSER inside of a feat. You
 must use
-    <a href="globalfilesadd.html#feat|">
+    <a href="globalfilesadd.html#feat">
      ADD:FEAT
     </a>
     to
@@ -617,7 +616,6 @@ AUTO:FEAT|Alertness</code>
     The feat "Dodge" is cleared and the feat
 "Alertness" is granted as an automatic feat.
    </p>
-  </div>
   <hr/>
   <p class="lstnew">
    <a id="autolang" name="autolang">
@@ -2825,9 +2823,17 @@ Region3 as the character's region.
    The PC is from the "Timbuktu" region.
   </p>
   <hr/>
-  <h3 id="remove">
-   REMOVE:FEAT
-  </h3>
+  <a  name="remove" id="remove" />
+   <p class="lststatus">
+    *** New 5.11.13
+   </p>
+   <p class="indent0">
+    <strong>
+     Tag Name:
+    </strong>
+    REMOVE:FEAT|x|y,y
+   </p>
+   <p class="indent1"><strong>Status:</strong></p>
   <ul>
    <li>
     6.05.04 (July 2015): JIRA
@@ -2859,16 +2865,6 @@ common format.
     </ul>
    </li>
   </ul>
-  <div class="deprecated">
-   <p class="lststatus">
-    *** New 5.11.13
-   </p>
-   <p class="indent0">
-    <strong>
-     Tag Name:
-    </strong>
-    REMOVE:FEAT|x|y,y
-   </p>
    <p class="indent1">
     <strong>
      Variables Used (x):
@@ -2974,7 +2970,6 @@ by the Paladin Class.
    <p class="indent2">
     Works in Ability, Class and Template files.
    </p>
-  </div>
   <hr/>
   <h3>
    SAB - 'special ability'
@@ -4492,6 +4487,7 @@ PREAPPLY tag.
    Removes the "Lycanthrope" template..
   </p>
   <hr/>
+  <a name="udam" id="udam" />
   <h3 id="udam">
    UDAM
   </h3>
@@ -4727,9 +4723,17 @@ Dwarves ignore encumbrance penalties to movement for heavy armor
 and heavy loads.
   </p>
   <hr/>
-  <h3 id="vfeat">
-   VFEAT
-  </h3>
+  <a  name="vfeat" id="vfeat" />
+   <p class="lststatus">
+    *** Updated 5.17.4
+   </p>
+   <p class="indent0">
+    <strong>
+     Tag Name:
+    </strong>
+    VFEAT:x|x
+   </p>
+   <p class="indent1"><strong>Status:</strong></p>
   <ul>
    <li>
     6.05.04 (July 2015): JIRA
@@ -4769,16 +4773,6 @@ common format.
     </ul>
    </li>
   </ul>
-  <div class="deprecated">
-   <p class="lststatus">
-    *** Updated 5.17.4
-   </p>
-   <p class="indent0">
-    <strong>
-     Tag Name:
-    </strong>
-    VFEAT:x|x
-   </p>
    <p class="indent1">
     <strong>
      Variables Used (x):
@@ -4860,7 +4854,7 @@ virtual feats.
     </strong>
     activate a CHOOSER inside of a feat. You
 must use
-    <a href="globalfilesadd.html#feat|">
+    <a href="globalfilesadd.html#feat">
      ADD:FEAT
     </a>
     to
@@ -4911,7 +4905,6 @@ Monkey=1</code>
 virtual feat only if they have at least one level of "Ninja
 Monkey".
    </p>
-  </div>
   <hr/>
   <p class="indent0">
    <strong>
@@ -6038,7 +6031,6 @@ Name:
    Any Knowledge skills
   </p>
   <hr/>
-  <p>
-  </p>
+  </div>
  </body>
 </html>

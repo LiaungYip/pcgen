@@ -197,61 +197,169 @@ Basic File Types
    .
   </p>
   <hr/>
-  <h2>
-   <a id="taglist" name="taglist">
-    PCC File Tag List
-   </a>
-  </h2>
-  <p>
-   This section is divided into three sub-sections:
-  </p>
-  <p class="indent1">
-   <strong>
-    <a href="#datasettags">
-     Data Set and
-Campaign Information Tags
-    </a>
-   </strong>
-   - are used to provide
-information about the dataset
-  </p>
-  <p class="indent1">
-   <strong>
-    <a href="#mainbodytags">
-     Main Body
-Tags
-    </a>
-   </strong>
-   - are used to load the specific .lst files which
-make up the dataset.
-  </p>
-  <p class="indent1">
-   <strong>
-    <a href="#otherpcctags">
-     Other .pcc file
-tags
-    </a>
-   </strong>
-   - are used to provide additional
-functionality.
-  </p>
-  <hr/>
-  <h3>
-   <a id="datasettags" name="datasettags">
-    Data Set and Campaign
-Information Tags
-   </a>
-  </h3>
-  <p class="indent0">
-   The first two tags in the PCC file should be
-   <code>CAMPAIGN</code>
-   and
-   <code>GAMEMODE</code>
-   . These are
-presented below out of alphabetical order to emphasize that they
-are required tags which must be the first two lines in a PCC
-file.
-  </p>
+    <h2>
+      <a id="taglist" name="taglist">PCC File Tag List</a>
+    </h2>
+    <p>This section is divided into three sub-sections:</p>
+    <h3>
+<a id="datasettags" name="datasettags">Data Set and Campaign Information Tags</a>
+</h3>
+<p>These tags provide information about the dataset.</p>
+<p class="indent0">The first two tags in the PCC file should be 
+<code>CAMPAIGN</code> and 
+<code>GAMEMODE</code> . These are presented below out of alphabetical order to emphasize that they are required tags which must be the first two lines in a PCC file.</p>
+    <ul>
+        <li><a href="#campaign">CAMPAIGN</a></li>
+        <li><a href="#gamemode">GAMEMODE</a></li>
+        <li><a href="#booktype">BOOKTYPE</a></li>
+        <li><a href="#copyright">COPYRIGHT</a></li>
+        <li><a href="#desc">DESC</a></li>
+        <li><a href="#genre">GENRE</a></li>
+        <li><a href="#help">HELP</a></li>
+        <li><a href="#infotext">INFOTEXT</a></li>
+        <li><a href="#ismature">ISMATURE</a></li>
+        <li><a href="#isogl">ISOGL</a></li>
+        <li><a href="#islicensed">ISLICENSED</a></li>
+        <li><a href="#license">LICENSE</a></li>
+        <li><a href="#precampaign">PRECAMPAIGN</a></li>
+        <li><a href="#pubnamelong">PUBNAMELONG</a></li>
+        <li><a href="#pubnameshort">PUBNAMESHORT</a></li>
+        <li><a href="#pubnameweb">PUBNAMEWEB</a></li>
+        <li><a href="#rank">RANK</a></li>
+        <li><a href="#setting">SETTING</a></li>
+        <li><a href="#showinmenu">SHOWINMENU</a></li>
+        <li><a href="#sourcelong">SOURCELONG</a></li>
+        <li><a href="#sourceshort">SOURCESHORT</a></li>
+        <li><a href="#sourceweb">SOURCEWEB</a></li>
+        <li><a href="#sourcedate">SOURCEDATE</a></li>
+        <li><a href="#status">STATUS</a></li>
+        <li><a href="#type">TYPE</a></li>
+        <li><a href="#url">URL</a></li>
+    </ul>
+    <h3>
+<a id="mainbodytags" name="mainbodytags">Main Body Tags</a>
+</h3>
+<p>Loads the specific .lst files which make up the dataset.</p>
+<p>The function of all main body tags is to tell PCGen to load a specific file as part of that campaign file. There are three ways of doing this, each dependant on where the file to be loaded can be found relative to the 
+<em>PCC</em> file.</p>
+<h4>Direct Loading</h4>
+<p class="indent1">The first and most common is by a relative file path assuming a starting point in the folder where the 
+<em>PCC</em> file is stored. If the file to be loaded and the 
+<em>PCC</em> file that calls it are in the same directory then all that is needed is the name of the file.</p>
+<p class="indent1">
+<strong>Examples:</strong>
+</p>
+<p class="indent2">
+<code>CLASS:fhbclasses.lst</code>
+</p>
+<p class="indent3">Loads the file fhbclasses.lst which is in the same directory as the .pcc file calling it.</p>
+<h4>Absolute Loading</h4>
+<p class="indent1">The second method is a special absolute path which is useful if you need to call a specific file from a known location in the data or vendor folder.</p>
+<ul class="indent1">
+<li>Using the &#39;at&#39; symbol (@) and a file path will direct PCGen to look for the file in the 
+<em>DATA</em> folder using the path specified.</li>
+<li>Using the ampersand (&amp;) and a file path will direct PCGen to look for the file in the 
+<em>VENDOR</em> folder using the path specified.</li>
+<li>Using the asterisk (*) and a file path will direct PCGen to first attempt to locate the file in the 
+<em>VENDOR</em> folder and then will look in the 
+<em>DATE</em> folder.</li>
+</ul>
+<p class="indent1">
+<strong>Examples:</strong>
+</p>
+<p class="indent2">
+<code>SPELL:@/d20ogl/srd/srdspells.lst</code>
+</p>
+<p class="indent3">Loads the file from a path relative to the data folder.</p>
+<p class="indent2">
+<code>CLASS:&amp;/complete_monkey/complete_monkey_classes.lst</code>
+</p>
+<p class="indent3">Loads the file from a path relative to the vendor data folder.</p>
+<p class="indent2">
+<code>EQUIPMENT:*/d20ogl/srd35/basics/rsrd_equip.lst</code>
+</p>
+<p class="indent3">Loads the file from a path relative to the vendor data folder and if that does not exist, uses a path relative to the data folder.</p>
+<h4>Internet Loading</h4>
+<p class="indent1">The third method is by loading data files over the internet. To do this you must set PCGen&#39;s 
+<a href="../../menupages/settings/pcgen/pcgensources.html">Preferences</a> to allow this. You can then create a 
+<em>PCC</em> file which uses a web address instead of a file path to load source files.</p>
+<p class="indent1">
+<strong>Examples:</strong>
+</p>
+<p class="indent2">
+<code>CLASS:http://www.foogames.com/fhandbook/fhbclasses.lst</code>
+</p>
+<p class="indent3">Loads the source file from a web site.</p>
+<p class="sidebar0">
+<strong>NOTE:</strong> Do not use backslashes (\) for directory separators in file paths, use only forward slashes (/). backslashes work correctly on Windows systems but cause problems on Unix flavored systems such as Linux and Max OS X.</p>
+<h4>Multiple Files Per Object</h4>
+<p class="indent1">The tags in this section can, and it is recommended for equipment, have multiple lines. The names of the list files in the example column are also only suggestions. To include the same type of files from the same directory on the same line as a pipe-delimited (|) list of files, e.g. 
+<code>fhbarmorshields.lst|fhbequip|etc</code> . Sometimes, not all of these tags are required by a source material. If a tag is not required, it cannot be left blank, it must be commented out or deleted entirely. These tags only tell PCGen where to go to get the information it needs, it points it to the right spot. Each list file will be fully explained below, separated by the list file name, with a full list of the tags that can be used in each one.</p>
+<h4>Prerequisites on Main Body Tags</h4>
+<p class="indent1">The 
+<code>PRECAMPAIGN</code> tag can be appended to the end of any main body tag to either include or exclude the loading of LST files, either in whole or in part.</p>
+<p class="indent1">Examples:</p>
+<p class="indent2">
+<code>FEAT:source_feats_apg.lst|!PRECAMPAIGN:1,APG</code>
+</p>
+<p class="indent3">The 
+<span class="lstfile">source_feats_apg.lst</span> file will be loaded only if the APG Campaign file is not loaded.</p>
+<p class="indent2">
+<code>FEAT:source_feats_um.lst|!PRECAMPAIGN:1,UM</code>
+</p>
+<p class="indent3">The 
+<span class="lstfile">source_feats_um.lst</span> file will be loaded only if the UM Campaign file is not loaded.</p>
+<p class="indent2">
+<code>FEAT:source_feats_apg.lst|(INCLUDE:foo|bar)|PRECAMPAIGN:1,APG</code>
+</p>
+<p class="indent3">The 
+<span class="lstfile">source_feats_apg.lst</span> file will be loaded only if the APG Campaign file is not loaded.</p>
+<p class="indent2">
+<code>EQUIPMENT:../ultimate_combat/pfuc_equip_armor.lst|!PRECAMPAIGN:1,INCLUDES=Paizo - Pathfinder Roleplaying Game Ultimate Combat</code>
+</p>
+<p class="indent3">The 
+<span class="lstfile">../ultimate_combat/pfuc_equip_armor.lst</span> file will be loaded only if the loaded campaign files includes the 
+<em>Paizo - Pathfinder Roleplaying Game Ultimate Combat</em> campaign file.</p>
+    <ul>
+        <li><a href="#abilitypcc">ABILITYPCC</a></li>
+        <li><a href="#abilitycategory">ABILITYCATEGORY</a></li>
+        <li><a href="#armorprof">ARMORPROF</a></li>
+        <li><a href="#bioset">BIOSET</a></li>
+        <li><a href="#class">CLASS</a></li>
+        <li><a href="#companionmod">COMPANIONMOD</a></li>
+        <li><a href="#cover">COVER</a></li>
+        <li><a href="#deity">DEITY</a></li>
+        <li><a href="#domain">DOMAIN</a></li>
+        <li><a href="#equipment">EQUIPMENT</a></li>
+        <li><a href="#equipmod">EQUIPMOD</a></li>
+        <li><a href="#kit">KIT</a></li>
+        <li><a href="#language">LANGUAGE</a></li>
+        <li><a href="#logo">LOGO</a></li>
+        <li><a href="#pcc">PCC</a></li>
+        <li><a href="#race">RACE</a></li>
+        <li><a href="#skill">SKILL</a></li>
+        <li><a href="#shieldprof">SHIELDPROF</a></li>
+        <li><a href="#spell">SPELL</a></li>
+        <li><a href="#template">TEMPLATE</a></li>
+        <li><a href="#weaponprof">WEAPONPROF</a></li>
+    </ul>
+    <h3>
+<a id="otherpcctags" name="otherpcctags">Other .pcc file tags</a>
+</h3>
+<p>The tags below do not provide information about the dataset nor do they load files by themselves but instead provide additional functionality.</p>
+    <ul>
+        <li><a href="#lstexclude">LSTEXCLUDE</a></li>
+        <li><a href="#allowdupes">ALLOWDUPES</a></li>
+        <li><a href="#include">INCLUDE</a></li>
+        <li><a href="#exclude">EXCLUDE</a></li>
+        <li><a href="#forwardref">FORWARDREF</a></li>
+        <li><a href="#hidetype">HIDETYPE</a></li>
+        <li><a href="#option">OPTION</a></li>
+        <li><a href="#reqskill">REQSKILL</a></li>
+    </ul>
+  
+  
+  
   <hr/>
   <div id="tag_docs">
   <p class="indent0">
@@ -1677,240 +1785,6 @@ know what you think!" as an active link to the website
    </p>
   </blockquote>
   <hr/>
-  <h3>
-   <a id="mainbodytags" name="mainbodytags">
-    Main Body
-Tags
-   </a>
-  </h3>
-  <p>
-   The function of all main body tags is to tell PCGen to load a
-specific file as part of that campaign file. There are three ways
-of doing this, each dependant on where the file to be loaded can be
-found relative to the
-   <em>
-    PCC
-   </em>
-   file.
-  </p>
-  <h4>
-   Direct Loading
-  </h4>
-  <p class="indent1">
-   The first and most common is by a relative file
-path assuming a starting point in the folder where the
-   <em>
-    PCC
-   </em>
-   file is stored. If the file to be loaded and the
-   <em>
-    PCC
-   </em>
-   file
-that calls it are in the same directory then all that is needed is
-the name of the file.
-  </p>
-  <p class="indent1">
-   <strong>
-    Examples:
-   </strong>
-  </p>
-  <p class="indent2">
-   <code>CLASS:fhbclasses.lst</code>
-  </p>
-  <p class="indent3">
-   Loads the file fhbclasses.lst which is in the
-same directory as the .pcc file calling it.
-  </p>
-  <h4>
-   Absolute Loading
-  </h4>
-  <p class="indent1">
-   The second method is a special absolute path
-which is useful if you need to call a specific file from a known
-location in the data or vendor folder.
-  </p>
-  <ul class="indent1">
-   <li>
-    Using the 'at' symbol (@) and a file path will direct PCGen to
-look for the file in the
-    <em>
-     DATA
-    </em>
-    folder using the path
-specified.
-   </li>
-   <li>
-    Using the ampersand (&amp;) and a file path will direct PCGen
-to look for the file in the
-    <em>
-     VENDOR
-    </em>
-    folder using the path
-specified.
-   </li>
-   <li>
-    Using the asterisk (*) and a file path will direct PCGen to
-first attempt to locate the file in the
-    <em>
-     VENDOR
-    </em>
-    folder and
-then will look in the
-    <em>
-     DATE
-    </em>
-    folder.
-   </li>
-  </ul>
-  <p class="indent1">
-   <strong>
-    Examples:
-   </strong>
-  </p>
-  <p class="indent2">
-   <code>SPELL:@/d20ogl/srd/srdspells.lst</code>
-  </p>
-  <p class="indent3">
-   Loads the file from a path relative to the data
-folder.
-  </p>
-  <p class="indent2">
-   <code>CLASS:&amp;/complete_monkey/complete_monkey_classes.lst</code>
-  </p>
-  <p class="indent3">
-   Loads the file from a path relative to the
-vendor data folder.
-  </p>
-  <p class="indent2">
-   <code>EQUIPMENT:*/d20ogl/srd35/basics/rsrd_equip.lst</code>
-  </p>
-  <p class="indent3">
-   Loads the file from a path relative to the
-vendor data folder and if that does not exist, uses a path relative
-to the data folder.
-  </p>
-  <h4>
-   Internet Loading
-  </h4>
-  <p class="indent1">
-   The third method is by loading data files over
-the internet. To do this you must set PCGen's
-   <a href="../../menupages/settings/pcgen/pcgensources.html">
-    Preferences
-   </a>
-   to allow this. You can then create a
-   <em>
-    PCC
-   </em>
-   file which uses a
-web address instead of a file path to load source files.
-  </p>
-  <p class="indent1">
-   <strong>
-    Examples:
-   </strong>
-  </p>
-  <p class="indent2">
-   <code>CLASS:http://www.foogames.com/fhandbook/fhbclasses.lst</code>
-  </p>
-  <p class="indent3">
-   Loads the source file from a web site.
-  </p>
-  <p class="sidebar0">
-   <strong>
-    NOTE:
-   </strong>
-   Do not use backslashes
-(\) for directory separators in file paths, use only forward
-slashes (/). backslashes work correctly on Windows systems but
-cause problems on Unix flavored systems such as Linux and Max OS
-X.
-  </p>
-  <h4>
-   Multiple Files Per Object
-  </h4>
-  <p class="indent1">
-   The tags in this section can, and it is
-recommended for equipment, have multiple lines. The names of the
-list files in the example column are also only suggestions. To
-include the same type of files from the same directory on the same
-line as a pipe-delimited (|) list of files, e.g.
-   <code>fhbarmorshields.lst|fhbequip|etc</code>
-   . Sometimes, not all
-of these tags are required by a source material. If a tag is not
-required, it cannot be left blank, it must be commented out or
-deleted entirely. These tags only tell PCGen where to go to get the
-information it needs, it points it to the right spot. Each list
-file will be fully explained below, separated by the list file
-name, with a full list of the tags that can be used in each
-one.
-  </p>
-  <h4>
-   Prerequisites on Main Body Tags
-  </h4>
-  <p class="indent1">
-   The
-   <code>PRECAMPAIGN</code>
-   tag can be appended
-to the end of any main body tag to either include or exclude the
-loading of LST files, either in whole or in part.
-  </p>
-  <p class="indent1">
-   Examples:
-  </p>
-  <p class="indent2">
-   <code>FEAT:source_feats_apg.lst|!PRECAMPAIGN:1,APG</code>
-  </p>
-  <p class="indent3">
-   The
-   <span class="lstfile">
-    source_feats_apg.lst
-   </span>
-   file will be loaded only if
-the APG Campaign file is not loaded.
-  </p>
-  <p class="indent2">
-   <code>FEAT:source_feats_um.lst|!PRECAMPAIGN:1,UM</code>
-  </p>
-  <p class="indent3">
-   The
-   <span class="lstfile">
-    source_feats_um.lst
-   </span>
-   file will be loaded only if
-the UM Campaign file is not loaded.
-  </p>
-  <p class="indent2">
-   <code>FEAT:source_feats_apg.lst|(INCLUDE:foo|bar)|PRECAMPAIGN:1,APG</code>
-  </p>
-  <p class="indent3">
-   The
-   <span class="lstfile">
-    source_feats_apg.lst
-   </span>
-   file will be loaded only if
-the APG Campaign file is not loaded.
-  </p>
-  <p class="indent2">
-   <code>EQUIPMENT:../ultimate_combat/pfuc_equip_armor.lst|!PRECAMPAIGN:1,INCLUDES=Paizo
-- Pathfinder Roleplaying Game Ultimate Combat</code>
-  </p>
-  <p class="indent3">
-   The
-   <span class="lstfile">
-    ../ultimate_combat/pfuc_equip_armor.lst
-   </span>
-   file will
-be loaded only if the loaded campaign files includes the
-   <em>
-    Paizo
-- Pathfinder Roleplaying Game Ultimate Combat
-   </em>
-   campaign
-file.
-  </p>
-  <hr/>
   <p class="status">
    <a id="abilitypcc" name="abilitypcc">
     *** New
@@ -2334,79 +2208,39 @@ file specified.
    <code>EQUIPMOD:fooequipmods.lst</code>
   </p>
   <hr/>
-  <h3 id="feat">
-   FEAT
-  </h3>
-  <ul class="incremental">
-   <li>
-    6.05.04 (July 2015): JIRA
-    <a href="http://jira.pcgen.org/browse/NEWTAG-477">
-     NEWTAG-477
-    </a>
-    / Github
-    <a href="https://github.com/PCGen/pcgen/pull/380">
-     PR #380
-    </a>
-    <ul class="incremental">
-     <li>
-      The
-      <code>FEAT</code>
-      file is deprecated. Use
-      <a href="#abilitypcc">
-       <code>ABILITY</code>
-      </a>
-      instead.
-     </li>
-     <li>
-      All
-      <code>FEAT</code>
-      tags have been
-      <strong>
-       deprecated
-      </strong>
-      and replaced by the
-      <code>ABILITY</code>
-      system, which is more general. The
-      <code>ABILITY</code>
-      system can model feats, racial features, class
-features, traits, flaws, temporary bonuses, and so on, all using a
-common format.
-     </li>
-    </ul>
-   </li>
-  </ul>
-  <div class="deprecated">
-   <p class="indent0">
-    <strong>
-     Tag Name:
-    </strong>
-    FEAT:x
-   </p>
-   <p class="indent1">
-    <strong>
-     Variables Used (x):
-    </strong>
-    Text (File
-path)
-   </p>
-   <p class="indent1">
-    <strong>
-     What it does:
-    </strong>
-   </p>
-   <p class="indent2">
-    Tells PCGen to load the feats list file
-specified.
-   </p>
-   <p class="indent1">
-    <strong>
-     Example:
-    </strong>
-   </p>
-   <p class="indent2">
-    <code>FEAT:foofeats.lst</code>
-   </p>
-  </div>
+<a id="feat" name="feat" />
+<p class="indent0">
+<strong>Tag Name:</strong> FEAT:x</p>
+<p class="indent1"><strong>Status:</strong></p>
+<ul class="incremental">
+<li>6.05.04 (July 2015): JIRA 
+<a href="http://jira.pcgen.org/browse/NEWTAG-477">NEWTAG-477</a> / Github 
+<a href="https://github.com/PCGen/pcgen/pull/380">PR #380</a>
+<ul class="incremental">
+<li>The 
+<code>FEAT</code> file is deprecated. Use 
+<a href="#abilitypcc">
+<code>ABILITY</code>
+</a> instead.</li>
+<li>All 
+<code>FEAT</code> tags have been 
+<strong>deprecated</strong> and replaced by the 
+<code>ABILITY</code> system, which is more general. The 
+<code>ABILITY</code> system can model feats, racial features, class features, traits, flaws, temporary bonuses, and so on, all using a common format.</li>
+</ul></li>
+</ul>
+<p class="indent1">
+<strong>Variables Used (x):</strong> Text (File path)</p>
+<p class="indent1">
+<strong>What it does:</strong>
+</p>
+<p class="indent2">Tells PCGen to load the feats list file specified.</p>
+<p class="indent1">
+<strong>Example:</strong>
+</p>
+<p class="indent2">
+<code>FEAT:foofeats.lst</code>
+</p>
   <hr/>
   <p class="indent0">
    <strong>
@@ -2855,18 +2689,7 @@ list file specified.
    file.
   </p>
   <hr/>
-  <h3>
-   <a id="otherpcctags" name="otherpcctags">
-    Other .pcc file
-tags
-   </a>
-  </h3>
-  <p>
-   The tags below do not provide information about the dataset nor
-do they load files by themselves but instead provide additional
-functionality.
-  </p>
-  <hr/>
+
   <p class="indent0">
    <strong>
     <a id="lstexclude" name="lstexclude">
