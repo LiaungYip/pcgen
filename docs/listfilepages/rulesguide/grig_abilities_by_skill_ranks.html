@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
                 PCGen Documentation Project
                         
                 $Author$
@@ -16,42 +15,42 @@
                 Description:
                 Provides information on specific rules implamentation in the LST files.
         -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    Game Rules Implementation Guide
   </title>
-  <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Abilities by Skill Ranks
   </h1>
-  <p class="indent1">
-   <strong>
+<p class="indent1">
+<strong>
     Rule Description:
    </strong>
    Abilities can
 be bought by taking ranks in the appropriate skill.
   </p>
-  <p class="indent1">
-   <strong>
+<p class="indent1">
+<strong>
     PCGen Version:
    </strong>
    5.12.1
   </p>
-  <p class="indent1">
-   <strong>
+<p class="indent1">
+<strong>
     Gamemode/Dataset:
    </strong>
    35e/RSRD
   </p>
-  <p class="indent1">
-   <strong>
+<p class="indent1">
+<strong>
     File(s) Covered:
    </strong>
-   <span class="lstfile">
+<span class="lstfile">
     statsandchecks.lst
    </span>
    ,
@@ -66,28 +65,28 @@ be bought by taking ranks in the appropriate skill.
    <span class="lstfile">
     skills.lst
    </span>
-  </p>
-  <p class="indent1">
-   <strong>
+</p>
+<p class="indent1">
+<strong>
     Tags used
    </strong>
    (Stats and Checks
 File):
   </p>
-  <p class="indent2">
-   <a href="../globalfilestagpages/globalfilesdefine.html">
+<p class="indent2">
+<a href="../globalfilestagpages/globalfilesdefine.html">
     DEFINE
    </a>
-  </p>
-  <p class="indent1">
-   <strong>
+</p>
+<p class="indent1">
+<strong>
     Tags used
    </strong>
    (Ability Category
 File):
   </p>
-  <p class="indent2">
-   <a href="../datafilestagpages/datafilesabilitycategory.html#abilitycategory">
+<p class="indent2">
+<a href="../datafilestagpages/datafilesabilitycategory.html#abilitycategory">
     ABILITYCATEGORY
    </a>
    ,
@@ -118,15 +117,15 @@ File):
    <a href="../systemfilestagpages/gamemodemiscinfolist.html#visible">
     VISIBLE
    </a>
-  </p>
-  <p class="indent1">
-   <strong>
+</p>
+<p class="indent1">
+<strong>
     Tags used
    </strong>
    (Skill File):
   </p>
-  <p class="indent2">
-   <a href="../globalfilestagpages/globalfilestype.html#skill">
+<p class="indent2">
+<a href="../globalfilestagpages/globalfilestype.html#skill">
     TYPE
    </a>
    ,
@@ -137,15 +136,15 @@ File):
    <a href="../globalfilestagpages/globalfilesbonus.html#abilitypool">
     BONUS:ABILITYPOOL
    </a>
-  </p>
-  <p class="indent1">
-   <strong>
+</p>
+<p class="indent1">
+<strong>
     Tags used
    </strong>
    (Ability File):
   </p>
-  <p class="indent2">
-   <a href="../datafilestagpages/datafilesability.html#category2">
+<p class="indent2">
+<a href="../datafilestagpages/datafilesability.html#category2">
     CATEGORY
    </a>
    ,
@@ -176,19 +175,19 @@ File):
    <a href="../globalfilestagpages/globalfilesbonus.html#var">
     BONUS:VAR
    </a>
-  </p>
-  <p class="indent1">
-   <strong>
+</p>
+<p class="indent1">
+<strong>
     Tags used
    </strong>
    (Class File):
   </p>
-  <p class="indent2">
-   <a href="../datafilestagpages/datafilesclasses.html">
+<p class="indent2">
+<a href="../datafilestagpages/datafilesclasses.html">
     BONUS:ADD
    </a> (Note 2016-07-16: Class file "ADD" tag no longer exists)
   </p>
-  <p class="sidebar1">
+<p class="sidebar1">
    In this section we will discuss only those LST
 tags specific to this implementation, and how they are used to
 implement the subject rule. For more general information on the
@@ -199,11 +198,11 @@ associated tags, please visit the
    section of the PCGen
 Documentation.
   </p>
-  <hr/>
-  <h2>
+<hr/>
+<h2>
    Implementation Discussion
   </h2>
-  <p class="indent1">
+<p class="indent1">
    Implementing "Abilities by Skill Ranks" requires
 modifications to one Gamemode file and four Data files. The
 gamemode file we need to modify is the
@@ -255,12 +254,12 @@ Max
    </span>
    .
   </p>
-  <p class="indent1">
+<p class="indent1">
    The mechanics of this rule, as implemented on
 this page, work this way:
   </p>
-  <ul class="indent1">
-   <li class="tagindent0">
+<ul class="indent1">
+<li class="tagindent0">
     When the character is loaded, the
     <span class="lstvar">
      AbilitybySkillMax
@@ -268,16 +267,16 @@ this page, work this way:
     variable is
 initialized and set to half of the characters total level.
    </li>
-   <li class="tagindent0">
+<li class="tagindent0">
     Each rank taken in the skill named "Skills
 to Abilities" adds one point to the ability pool for the
 "AbilitybySkill" category of abilities.
    </li>
-   <li class="tagindent0">
+<li class="tagindent0">
     "AbilitybySkill" abilities become available
 under the "AbilitybySkill" sub-tab on the feats tab.
    </li>
-   <li class="tagindent0">
+<li class="tagindent0">
     The first such ability the character takes
 defines and initializes the
     <span class="lstvar">
@@ -285,7 +284,7 @@ defines and initializes the
     </span>
     variable.
    </li>
-   <li class="tagindent0">
+<li class="tagindent0">
     Subsequent AbilitybySkill abilities taken by
 the character increases the value of the variable,
     <span class="lstvar">
@@ -293,7 +292,7 @@ the character increases the value of the variable,
     </span>
     , by one.
    </li>
-   <li class="tagindent0">
+<li class="tagindent0">
     Once
     <span class="lstvar">
      AbilitybySkillCount
@@ -310,8 +309,8 @@ the
     </span>
     variable.
    </li>
-  </ul>
-  <p class="indent1">
+</ul>
+<p class="indent1">
    We will discuss, below, each of the LST entries
 required, and the tags that make them work, to implement "Abilities
 by Skill Rank". For assistance in understanding how to read this
@@ -322,11 +321,11 @@ Guide
    </a>
    .
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Statsandchecks.lst File
   </h3>
-  <p class="sidebar1">
+<p class="sidebar1">
    Note: The
    <span class="lstfile">
     statsandchecks.lst
@@ -342,7 +341,7 @@ such is not referenced in the
    </span>
    directory.
   </p>
-  <p class="indent1">
+<p class="indent1">
    The
    <span class="lstfile">
     statsandchecks.lst
@@ -352,15 +351,15 @@ implementation consists of the modification of an existing entry.
 The following tag is added to the line defining the intelligence
 stat:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DEFINE:AbilitybySkillMax|TL/2</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DEFINE:AbilitybySkillMax|TL/2</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This tag is used
@@ -371,19 +370,19 @@ to define the variable
     to have a value of half the
 character's total level.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    You will find the modified
    <a href="#statsandschecks">
     Intellegence Stat
    </a>
    below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    AbilityCategory.lst File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The specific
    <span class="lstfile">
     abilitycategory.lst
@@ -393,108 +392,108 @@ implement "Abilities by Skill Ranks" consists of the definition of
 a single ability category called "AbilitybySkill". The tags used to
 do this are explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>ABILITYCATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>ABILITYCATEGORY:AbilitybySkill</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This creates a
 new ability category called "AbilitybySkill". This is what will
 show in the PCGen user interface, under the FEATs tab.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>CATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>CATEGORY:AbilitybySkill</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This sets the new
 category's parent category as the same as the new category.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>PLURAL:AbilitybySkills</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PLURAL:AbilitybySkills</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This establishes
 the pluralform of the ability category name. (Used primarily for
 Internatinalization.)
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>EDITABLE:YES</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>EDITABLE:YES</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This establishes
 that that a user can select abilities in this category.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>EDITPOOL:NO</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>EDITPOOL:NO</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     The pool for this
 category of ability cannot be modified by the user.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>FRACTIONALPOOL:NO</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>FRACTIONALPOOL:NO</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Restricts the
 ability pool for this category of ability to whole numbers
 only.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>POOL:AbilitybySkillPool</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>POOL:AbilitybySkillPool</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This establishes
@@ -506,16 +505,16 @@ variable
     . (See
 DEFINE tag below.)
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DEFINE:AbilitybySkillPool|0</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DEFINE:AbilitybySkillPool|0</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This tag is used
@@ -526,16 +525,16 @@ to define the variable
     and initialize its value to
 zero.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>VISIBLE:QUALIFY</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VISIBLE:QUALIFY</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Makes this
@@ -543,8 +542,8 @@ category of ability visible in the PCGen GUI only when the
 character puts points into the skill, thereby adding points to the
 ability pool.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    You will find the completed
    <a href="#miscinfo">
     AbilitybySkill
@@ -552,11 +551,11 @@ ability pool.
    Ability Category Definition
 below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Skills.lst File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    Only one new entry is required in the
    <span class="lstfile">
     skill.lst
@@ -567,47 +566,47 @@ points to the pool of available points for the AbilitybySkill
 category of abilities, one for each skill rank taken. The tags used
 to do this are explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>TYPE:NoStat</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>TYPE:NoStat</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This skill is
 assigned a type of "NoStat".
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>VISIBLE:DISPLAY</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VISIBLE:DISPLAY</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This skill will
 only be visible in PCGen's graphical user interface (GUI). It will
 not appear on the Character sheet.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:ABILITYPOOL|AbilitybySkillPool|SKILL.Skills to
+<code>BONUS:ABILITYPOOL|AbilitybySkillPool|SKILL.Skills to
 Abilities.RANK</code>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Breaking down the
@@ -615,19 +614,19 @@ tag we are saying to give a bonus to the ABILITYPOOL of the
 AbilitybySkill category for each skill rank placed in the
 skill.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    You will find the completed
    <a href="#skills">
     Skills to Abilities
    </a>
    below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Ability.lst File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The specific entries in the
    <span class="lstfile">
     ability.lst
@@ -639,22 +638,22 @@ defined. We include below notes on the creation of three abilities
 called "Generic Skill Bought Ability", "Increasing Skill Bought
 Ability Max", and "Level Granted Skill Bought Ability".
   </p>
-  <h4 class="indent0">
+<h4 class="indent0">
    Generic Skill Bought Ability
   </h4>
-  <p class="indent1">
+<p class="indent1">
    [Explanation of this ability.] The tags used to
 do this are explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>CATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>CATEGORY:AbilitybySkill</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This places the
@@ -665,48 +664,48 @@ category. (See
     </span>
     above.)
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>TYPE:AbilitybySkill.Movement</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>TYPE:AbilitybySkill.Movement</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Sets the TYPE for
 this ability to "AbilitybySkill" and "Movement".
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>VISIBLE:QUALIFY</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VISIBLE:QUALIFY</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Allows the user
 to see this ability within the PCGen GUI when all prerequisites
 have been met.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>!PREABILITY:1,CATEGORY=AbilitybySkill,Generic Skill Bought
+<code>!PREABILITY:1,CATEGORY=AbilitybySkill,Generic Skill Bought
 Ability</code>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Sets a
@@ -719,16 +718,16 @@ ability. (The inclusion of this tag is a temporary workaround as
 there is currently a bug with the ability object not respecting the
 default of MULT:NO.)
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>PRESKILL:1,Tumble=12</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PRESKILL:1,Tumble=12</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Sets a
@@ -739,16 +738,16 @@ Specifically, the character must have at least 12 ranks in the
     </strong>
     skill in order to select this ability.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>PREVARLT:AbilitybySkillCount,AbilitybySkillMax</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PREVARLT:AbilitybySkillCount,AbilitybySkillMax</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Sets a
@@ -764,16 +763,16 @@ Specifically, the variable
     in order for the
 ability to be selected.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DEFINE:AbilitybySkillCount|0</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DEFINE:AbilitybySkillCount|0</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This tag is used
@@ -784,16 +783,16 @@ to define the variable
     and to initialize it to the
 value zero.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DESC:&lt;appropriate description&gt;</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DESC:&lt;appropriate description&gt;</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This is where you
@@ -803,16 +802,16 @@ to NO or DISPLAY. In that case you would skip this tag and may
 instead use SA: in it's place. That tag is discussed in another
 lesson.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:VAR|AbilitybySkillCount|1</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:VAR|AbilitybySkillCount|1</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     This bonus tag
@@ -822,262 +821,262 @@ increases the value of the variable
     </span>
     by 1.
    </p>
-  </blockquote>
-  <h4 class="indent0">
+</blockquote>
+<h4 class="indent0">
    Increasing Skill Bought Ability Max
   </h4>
-  <p class="indent1">
+<p class="indent1">
    [Explanation of this ability.] The tags used to
 do this are explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
-   </p>
-  </blockquote>
-  <p class="indent1">
+</p>
+</blockquote>
+<p class="indent1">
    You will find the completed
    <a href="#ability">
     skill purchased abilities
    </a>
    below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Class.lst File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    [Explanation of how this class grants an ability
 upon level-up. The tags used to do this are explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>ADD:ABILITY|FEAT|AUTOMATIC|Initialize Abilities by
+<code>ADD:ABILITY|FEAT|AUTOMATIC|Initialize Abilities by
 Skill</code>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
-   </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</p>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>ADD:ABILITY|AbilitybySkill|AUTOMATIC|TYPE=AbilitybySkill</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>ADD:ABILITY|AbilitybySkill|AUTOMATIC|TYPE=AbilitybySkill</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
-   </p>
-  </blockquote>
-  <p class="indent1">
+</p>
+</blockquote>
+<p class="indent1">
    You will find the modified
    <a href="#class">
     ""
    </a>
    class below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Known Issues
   </h3>
-  <p class="indent1">
+<p class="indent1">
    None?
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    LST File Entry Examples
   </h3>
-  <p class="indent1">
+<p class="indent1">
    These LST objects are being presented as
 examples only and are not part of any official PCGen dataset.
   </p>
-  <h4 class="indent1">
-   <a id="statsandschecks" name="statsandschecks">
+<h4 class="indent1">
+<a id="statsandschecks" name="statsandschecks">
     Stats and Checks Gamemode File Entry:
    </a>
-  </h4>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>STATNAME:Intelligence</code>
-   </p>
-   <p class="tagindent1">
-    <code>ABB:INT</code>
-   </p>
-   <p class="tagindent1">
-    <code>STATMOD:floor(SCORE/2)-5</code>
-   </p>
-   <p class="tagindent1">
-    <code>DEFINE:MAXLEVELSTAT=INT|INTSCORE-10</code>
-   </p>
-   <p class="tagindent1">
-    <code>DEFINE:AbilitybySkillMax|0</code>
+</h4>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>STATNAME:Intelligence</code>
+</p>
+<p class="tagindent1">
+<code>ABB:INT</code>
+</p>
+<p class="tagindent1">
+<code>STATMOD:floor(SCORE/2)-5</code>
+</p>
+<p class="tagindent1">
+<code>DEFINE:MAXLEVELSTAT=INT|INTSCORE-10</code>
+</p>
+<p class="tagindent1">
+<code>DEFINE:AbilitybySkillMax|0</code>
     (This
 tag is added to the existing entry.)
    </p>
-   <p class="tagindent1">
-    <code>DEFINE:AbilitybySkillCount|0</code>
+<p class="tagindent1">
+<code>DEFINE:AbilitybySkillCount|0</code>
     (This tag is added to the existing entry.)
    </p>
-   <p class="tagindent1">
-    <code>BONUS:VAR|AbilitybySkillMax|TL</code>
+<p class="tagindent1">
+<code>BONUS:VAR|AbilitybySkillMax|TL</code>
     (This tag is added to the existing entry.)
    </p>
-   <p class="tagindent1">
-    <code>BONUS:LANG|BONUS|INT</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:MODSKILLPOINTS|NUMBER|INT</code>
-   </p>
-  </blockquote>
-  <h4 class="indent1">
-   <a id="abilitycategory" name="abilitycategory">
+<p class="tagindent1">
+<code>BONUS:LANG|BONUS|INT</code>
+</p>
+<p class="tagindent1">
+<code>BONUS:MODSKILLPOINTS|NUMBER|INT</code>
+</p>
+</blockquote>
+<h4 class="indent1">
+<a id="abilitycategory" name="abilitycategory">
     AbilityCategory File Entry:
    </a>
-  </h4>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>ABILITYCATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="tagindent1">
-    <code>CATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="tagindent1">
-    <code>PLURAL:AbilitybySkills</code>
-   </p>
-   <p class="tagindent1">
-    <code>EDITABLE:YES</code>
-   </p>
-   <p class="tagindent1">
-    <code>EDITPOOL:NO</code>
-   </p>
-   <p class="tagindent1">
-    <code>FRACTIONALPOOL:NO</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:QUALIFY</code>
-   </p>
-  </blockquote>
-  <h4 class="indent1">
-   <a id="skills" name="skills">
+</h4>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>ABILITYCATEGORY:AbilitybySkill</code>
+</p>
+<p class="tagindent1">
+<code>CATEGORY:AbilitybySkill</code>
+</p>
+<p class="tagindent1">
+<code>PLURAL:AbilitybySkills</code>
+</p>
+<p class="tagindent1">
+<code>EDITABLE:YES</code>
+</p>
+<p class="tagindent1">
+<code>EDITPOOL:NO</code>
+</p>
+<p class="tagindent1">
+<code>FRACTIONALPOOL:NO</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:QUALIFY</code>
+</p>
+</blockquote>
+<h4 class="indent1">
+<a id="skills" name="skills">
     Skills File
 Entry:
    </a>
-  </h4>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Skills to Abilities</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:None</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:DISPLAY</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:ABILITYPOOL|AbilitybySkill|SKILL.Skills to
+</h4>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Skills to Abilities</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:None</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:DISPLAY</code>
+</p>
+<p class="tagindent1">
+<code>BONUS:ABILITYPOOL|AbilitybySkill|SKILL.Skills to
 Abilities.RANK</code>
-   </p>
-  </blockquote>
-  <h4 class="indent1">
-   <a id="ability" name="ability">
+</p>
+</blockquote>
+<h4 class="indent1">
+<a id="ability" name="ability">
     Ability File
 Entry:
    </a>
-  </h4>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Generic Skill Bought Ability</code>
-   </p>
-   <p class="tagindent1">
-    <code>CATEGORY:AbilitybySkill</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:AbilitybySkill.Movement</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:QUALIFY</code>
-   </p>
-   <p class="tagindent1">
-    <code>!PREABILITY:1,CATEGORY=AbilitybySkill,Generic Skill Bought
+</h4>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Generic Skill Bought Ability</code>
+</p>
+<p class="tagindent1">
+<code>CATEGORY:AbilitybySkill</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:AbilitybySkill.Movement</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:QUALIFY</code>
+</p>
+<p class="tagindent1">
+<code>!PREABILITY:1,CATEGORY=AbilitybySkill,Generic Skill Bought
 Ability</code>
-   </p>
-   <p class="tagindent1">
-    <code>PRESKILL:1,Tumble=12</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREVARLT:AbilitybySkillCount,AbilitybySkillMax</code>
-   </p>
-   <p class="tagindent1">
-    <code>DEFINE:AbilitybySkillCount|0</code>
-   </p>
-   <p class="tagindent1">
-    <code>DESC:&lt;appropriate
+</p>
+<p class="tagindent1">
+<code>PRESKILL:1,Tumble=12</code>
+</p>
+<p class="tagindent1">
+<code>PREVARLT:AbilitybySkillCount,AbilitybySkillMax</code>
+</p>
+<p class="tagindent1">
+<code>DEFINE:AbilitybySkillCount|0</code>
+</p>
+<p class="tagindent1">
+<code>DESC:&lt;appropriate
 description&gt;</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:VAR|AbilitybySkillCount|1</code>
-   </p>
-  </blockquote>
-  <h4 class="indent1">
-   <a id="class" name="class">
+</p>
+<p class="tagindent1">
+<code>BONUS:VAR|AbilitybySkillCount|1</code>
+</p>
+</blockquote>
+<h4 class="indent1">
+<a id="class" name="class">
     Class File
 Entry:
    </a>
-  </h4>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>CLASS:Generic Class</code>
-   </p>
-   <p class="tagindent1">
-    <code>CLASS:Generic Class</code>
-   </p>
-   <p class="tagindent1">
-    <code>CLASS:Generic Class</code>
-   </p>
-   <p class="tagindent1">
-    <code>1</code>
+</h4>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>CLASS:Generic Class</code>
+</p>
+<p class="tagindent1">
+<code>CLASS:Generic Class</code>
+</p>
+<p class="tagindent1">
+<code>CLASS:Generic Class</code>
+</p>
+<p class="tagindent1">
+<code>1</code>
     [
     <code>ADD:ABILITY|FEAT|AUTOMATIC|Initialize Abilities by
 Skill</code>
     ] (Add this tag to an existing class)
    </p>
-   <p class="tagindent1">
-    <code>2</code>
-   </p>
-   <p class="tagindent1">
-    <code>3</code>
-   </p>
-   <p class="tagindent1">
-    <code>4</code>
-    <code>ADD:ABILITY|AbilitybySkill|AUTOMATIC|TYPE=AbilitybySkill
+<p class="tagindent1">
+<code>2</code>
+</p>
+<p class="tagindent1">
+<code>3</code>
+</p>
+<p class="tagindent1">
+<code>4</code>
+<code>ADD:ABILITY|AbilitybySkill|AUTOMATIC|TYPE=AbilitybySkill
 &lt;tab&gt; BONUS:VAR|AbilitybySkillMax|1</code>
     (Add these two
 tags to an existing class level lines)
    </p>
-   <p class="tagindent1">
-    <code>5</code>
-   </p>
-   <p class="tagindent1">
-    <code>6</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-  </p>
- </body>
+<p class="tagindent1">
+<code>5</code>
+</p>
+<p class="tagindent1">
+<code>6</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+</p>
+</body>
 </html>

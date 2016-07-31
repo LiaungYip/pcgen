@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
                 PCGen Documentation Project
                         
                 $Author$
@@ -14,20 +13,20 @@
                 Description:
                 Provides information on specific rules implamentation in the LST files.
         -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    Game Rules Implementation Guide
   </title>
-  <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Priesthoods
   </h1>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Rule Description:
    </strong>
    Deities may
@@ -35,38 +34,38 @@ have more than one "Priesthood", each with their own powers and
 abilities granted through the different domains available to each
 priesthood.
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     PCGen Version:
    </strong>
    5.12.1
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Gamemode/Dataset:
    </strong>
    35e/RSRD
 Complete
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     File(s) Covered:
    </strong>
-   <em>
+<em>
     feat.lst
    </em>
    , and
    <em>
     deity.lst
    </em>
-  </p>
-  <p class="indent0">
-   <strong>
+</p>
+<p class="indent0">
+<strong>
     Tags Used:
    </strong>
-  </p>
-  <p class="indent1">
-   <code><a href="../datafilestagpages/datafilesfeats.html#visible">
+</p>
+<p class="indent1">
+<code><a href="../datafilestagpages/datafilesfeats.html#visible">
      VISIBLE
     </a>
     ,
@@ -89,8 +88,8 @@ Complete
     <a href="../datafilestagpages/datafilesdeities.html#domains">
      DOMAINS
     </a></code>
-  </p>
-  <p class="sidebar1">
+</p>
+<p class="sidebar1">
    NOTE: In this section we will discuss only
 those LST tags specific to this implementation, and how they are
 used to implement the subject rule. For more general information on
@@ -101,11 +100,11 @@ Index
    </a>
    section of the PCGen Documentation.
   </p>
-  <hr/>
-  <h2>
+<hr/>
+<h2>
    Implementation Discussion
   </h2>
-  <p class="indent1">
+<p class="indent1">
    Implementing "Priesthoods" for deities requires
 entries in two lst files. These will be entries for the priesthood
 feats, one for each priesthood created, in the
@@ -123,15 +122,15 @@ are made available, and it is through these domains that the powers
 and abilities that differentiate each of a Deity's priesthoods from
 the others are granted.
   </p>
-  <p class="indent1">
+<p class="indent1">
    To help you better understand these entries, we
 will be using a fictitious deity called the "The Monkey God" who
 has four priesthoods, each with their own selection of domains.
 These priesthoods, and the domains they have access to, are listed
 below:
   </p>
-  <blockquote>
-   <p class="indent1">
+<blockquote>
+<p class="indent1">
     Priesthood of Code Monkey - Domains of
 Knowledge, Madness, Creation, and Magic.
     <br/>
@@ -143,8 +142,8 @@ and Magic.
     <br/>
     Priesthood of the Monkey - Domains of Knowledge and Madness.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    We will discuss, below, each of the LST entries
 required, and the tags that make them work, to implement these
 priesthoods. For assistance in understanding how to read this page
@@ -155,11 +154,11 @@ Guide
    </a>
    .
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Feat File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The specific feat entries in the
    <em>
     feat.lst
@@ -172,110 +171,110 @@ implementation these feats are used to simply identify which
 "priesthood" the character belongs to. The tags used to do this are
 explained below:
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>VISIBLE:EXPORT</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VISIBLE:EXPORT</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Hides the feat
 name from PCGen but displays it on the character sheet.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>TYPE:Priesthood</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>TYPE:Priesthood</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     This sets the
 TYPE of the associated priesthood feat as "Prisethood".
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>PREMULT:1,[!PREFEAT:TYPE=Priesthood],[PREFEAT:1,x]</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PREMULT:1,[!PREFEAT:TYPE=Priesthood],[PREFEAT:1,x]</code>
+</p>
+<p class="indent1">
+<strong>
      Variables Used (x):
     </strong>
     Text
 (Priesthood being granted.)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Sets a feat
 requirement of already having the associated feat OR having no
 priesthood feats at all.
    </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent2">
+<p class="indent0">
+<strong>
      Sub-Tag Used:
     </strong>
-    <code>!PREFEAT:1,TYPE=Priesthood</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>!PREFEAT:1,TYPE=Priesthood</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Used as part of
 the PREMULT tag above to set a feat requirement of not already
 having a priesthood feat.
    </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent2">
+<p class="indent0">
+<strong>
      Sub-Tag Used:
     </strong>
-    <code>PREFEAT:1,x</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PREFEAT:1,x</code>
+</p>
+<p class="indent1">
+<strong>
      Variables Used (x):
     </strong>
     Text
 (Priesthood)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Used as part of
 the PREMULT tag above to set a feat requirement of already having
 the associated priesthood feat.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    You will find the completed
    <a href="#feats">
     Priesthood Feats
    </a>
    below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Deity File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The specific deity entry in the
    <em>
     deity.lst
@@ -292,7 +291,7 @@ first thing that needs to happen is the choice of the Monkey God's
 preisdthoods, a choice which is made when the deity is first
 selected. The tags used to do this are explained below:
   </p>
-  <p class="sidebar1">
+<p class="sidebar1">
    NOTE: There are a number of tags used to create
 a deity that are not part of this implementation guide. To get more
 general information on how to create a deity you can review
@@ -306,238 +305,238 @@ Deities
    </a>
    section of these documents.
   </p>
-  <blockquote class="indent1">
-   <p class="tagindent3">
-    <strong>
+<blockquote class="indent1">
+<p class="tagindent3">
+<strong>
      Tag Used:
     </strong>
-    <code>ADD:FEAT|Priesthood of the Code Monkey, Priesthood of the
+<code>ADD:FEAT|Priesthood of the Code Monkey, Priesthood of the
 Data Monkey,Priesthood of the Doc Monkey,Priesthood of the
 Monkey</code>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Will give the
 character a choice of one of the four priesthood feats listed.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DOMAINS:x,x|PREFEAT:1,y,y</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DOMAINS:x,x|PREFEAT:1,y,y</code>
+</p>
+<p class="indent1">
+<strong>
      Variables Used (x):
     </strong>
     Text (Domain
 being granted.)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Variables Used (y):
     </strong>
     Text
 (Required priesthood. See priesthood feat list above.)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
-   </p>
-   <ul class="indent2">
-    <li>
+</p>
+<ul class="indent2">
+<li>
      This is a comma-delimited list of domains that the deity grants
 to the members pf it's various priesthoods.
     </li>
-    <li>
+<li>
      The domain name MUST match the domain names listed in the
 domain list file.
     </li>
-    <li>
+<li>
      The PREFEAT tag has been added at the end of the DOMAINS tag to
 apply restrictions on which domains are allowed for the priedthood
 selected in the ADD:FEAT tag.
     </li>
-    <li>
+<li>
      Multiple DOMAINS tags may be present for a deity. They will all
 add to the list of the deity's domains.
     </li>
-   </ul>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="indent0">
-    <strong>
+</ul>
+</blockquote>
+<blockquote class="indent2">
+<p class="indent0">
+<strong>
      Sub-Tag Used:
     </strong>
-    <code>PREFEAT:1,x,x</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PREFEAT:1,x,x</code>
+</p>
+<p class="indent1">
+<strong>
      Variables Used (x):
     </strong>
     Text (Name
 of priesthood. See Feat File Entry above.)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Sets a feat
 requirement for the DOMAINS tag granting domains to the deities
 clerics.
    </p>
-  </blockquote>
-  <p class="indent1">
+</blockquote>
+<p class="indent1">
    You will find the completed
    <a href="#deity">
     Deity
    </a>
    below.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Known Issues
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The use of the
    <code>ADD:FEAT</code>
    tag
 introduces a problem with the removal and reselection of a
 deity.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    LST File Entry Examples
   </h3>
-  <p class="indent1">
+<p class="indent1">
    These LST objects are being presented as
 examples only and are not part of any official PCGen dataset.
   </p>
-  <a id="feats" name="feats">
-  </a>
-  <p class="indent1">
+<a id="feats" name="feats">
+</a>
+<p class="indent1">
    Feat File: Priesthoods of the "Code", "Data",
 and "Doc" Monkeys
   </p>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Priesthood of the Code
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Priesthood of the Code
 Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:EXPORT</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:Priesthood</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
+</p>
+<p class="tagindent1">
+<code>VISIBLE:EXPORT</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:Priesthood</code>
+</p>
+<p class="tagindent1">
+<code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
 of the Code Monkey]</code>
-   </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Priesthood of the Data
+</p>
+</blockquote>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Priesthood of the Data
 Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:EXPORT</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:Priesthood</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
+</p>
+<p class="tagindent1">
+<code>VISIBLE:EXPORT</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:Priesthood</code>
+</p>
+<p class="tagindent1">
+<code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
 of the Data Monkey]</code>
-   </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Priesthood of the Doc Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:EXPORT</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:Priesthood</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
+</p>
+</blockquote>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Priesthood of the Doc Monkey</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:EXPORT</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:Priesthood</code>
+</p>
+<p class="tagindent1">
+<code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
 of the Doc Monkey]</code>
-   </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Priesthood of the Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:EXPORT</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:Priesthood</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
+</p>
+</blockquote>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Priesthood of the Monkey</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:EXPORT</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:Priesthood</code>
+</p>
+<p class="tagindent1">
+<code>PREMULT:1,[!PREFEAT:1,TYPE=Priesthood],[PREFEAT:1,Priesthood
 of the Monkey]</code>
-   </p>
-  </blockquote>
-  <a id="deity" name="deity">
-  </a>
-  <p class="indent1">
+</p>
+</blockquote>
+<a id="deity" name="deity">
+</a>
+<p class="indent1">
    Deity File: "Monkey God"
   </p>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>The Monkey God</code>
-   </p>
-   <p class="tagindent1">
-    <code>ALIGN:TN</code>
-   </p>
-   <p class="tagindent1">
-    <code>PREALIGN:NG,LN,TN,CN,NE</code>
-   </p>
-   <p class="tagindent1">
-    <code>DEITYWEAP:Pile of Poo</code>
-   </p>
-   <p class="tagindent1">
-    <code>DOMAINS:Knowledge,Madness</code>
-   </p>
-   <p class="tagindent1">
-    <code>DOMAINS:Creation|PREFEAT:1,Priesthood
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>The Monkey God</code>
+</p>
+<p class="tagindent1">
+<code>ALIGN:TN</code>
+</p>
+<p class="tagindent1">
+<code>PREALIGN:NG,LN,TN,CN,NE</code>
+</p>
+<p class="tagindent1">
+<code>DEITYWEAP:Pile of Poo</code>
+</p>
+<p class="tagindent1">
+<code>DOMAINS:Knowledge,Madness</code>
+</p>
+<p class="tagindent1">
+<code>DOMAINS:Creation|PREFEAT:1,Priesthood
 of the Code Monkey,Priesthood of the Data Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>DOMAINS:Artifice|PREFEAT:1,Priesthood
+</p>
+<p class="tagindent1">
+<code>DOMAINS:Artifice|PREFEAT:1,Priesthood
 of the Data Monkey,Priesthood of the Doc Monkey</code>
-   </p>
-   <p class="tagindent1">
-    <code>DOMAINS:Magic|PREFEAT:1,Priesthood of
+</p>
+<p class="tagindent1">
+<code>DOMAINS:Magic|PREFEAT:1,Priesthood of
 the Code Monkey],Priesthood of the Doc Monkey</code>
-   </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>ADD:FEAT|Priesthood of the Code
+</p>
+</blockquote>
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>ADD:FEAT|Priesthood of the Code
 Monkey,Priesthood of the Data Monkey, Priesthood of the Doc
 Monkey,Priesthood of the Monkey</code>
-   </p>
-  </blockquote>
-  <p class="indent2">
+</p>
+</blockquote>
+<p class="indent2">
    etc.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Variations on a Theme
   </h3>
-  <h4>
+<h4>
    Additional Powers and Abilities
   </h4>
-  <p class="indent1">
+<p class="indent1">
    The example above demonstrates how to grant
 different domains, and their associated powers, to a cleric based
 upon not only which deity he follows, but also based upon which of
@@ -549,32 +548,32 @@ what powers and abilities can be granted, all you have to do is
 browse through the various feats and templates distibuted with the
 RSRD. A few examples of such effects are listed below:
   </p>
-  <p class="indent1">
-   <strong>
+<p class="indent1">
+<strong>
     Examples of
     <em>
      feat.lst
     </em>
     solutions
    </strong>
-  </p>
-  <p class="indent1">
+</p>
+<p class="indent1">
    The following solutions can be implemnted in the
 priesthood feats directly.
   </p>
-  <blockquote>
-   <p class="indent0">
+<blockquote>
+<p class="indent0">
     Adding skill ranks is accomplished with the
 BONUS tag.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:SKILL|Balance,Escape Artist|2</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:SKILL|Balance,Escape Artist|2</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Adds two ranks
@@ -589,8 +588,8 @@ Artist
     </strong>
     .
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Taken from the feat
@@ -603,25 +602,25 @@ Artist
     </em>
     .
    </p>
-   <p class="indent0">
+<p class="indent0">
     Increasing the characters combat initiative can
 be accomplished with the BONUS tag.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:COMBAT|INITIATIVE|4</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:COMBAT|INITIATIVE|4</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Adds four to the
 characters initiative modifier.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Taken from the feat
@@ -634,18 +633,18 @@ characters initiative modifier.
     </em>
     .
    </p>
-   <p class="indent0">
+<p class="indent0">
     Adding additional feats can be accomplished with
 the VFEAT tag.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>VFEAT:Leadership</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VFEAT:Leadership</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Grants the
@@ -654,8 +653,8 @@ the VFEAT tag.
     </strong>
     feat to the characters.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Adapted from the feat
@@ -668,41 +667,41 @@ the VFEAT tag.
     </em>
     .
    </p>
-  </blockquote>
-  <p class="indent1">
-   <strong>
+</blockquote>
+<p class="indent1">
+<strong>
     Examples of
     <em>
      template.lst
     </em>
     solutions
    </strong>
-  </p>
-  <p class="indent1">
+</p>
+<p class="indent1">
    The following solutions can be implemented by
 creating priesthood templates and then granting the template in the
 priesthood feat with the TEMPLATE tag.
   </p>
-  <blockquote>
-   <p class="indent0">
+<blockquote>
+<p class="indent0">
     Increasing the hitdie size can be accomplished
 with the HITDIE tag in a template.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>HITDIE:%up2|CLASS=Cleric</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>HITDIE:%up2|CLASS=Cleric</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Increases the
 characters "Cleric" hitdie size by two steps.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Adapted from Template
@@ -715,25 +714,25 @@ characters "Cleric" hitdie size by two steps.
     </em>
     .
    </p>
-   <p class="indent0">
+<p class="indent0">
     Granting darkvision can be accomplished with the
 VISION tag in a template.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>VISION:Darkvision (60')</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VISION:Darkvision (60')</code>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Grants to the
 character darkvision out to 60'.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Adapted from Template
@@ -746,33 +745,33 @@ character darkvision out to 60'.
     </em>
     .
    </p>
-  </blockquote>
-  <p class="indent1">
-   <strong>
+</blockquote>
+<p class="indent1">
+<strong>
     Miscelaneous Examples
    </strong>
-  </p>
-  <blockquote>
-   <p class="indent0">
+</p>
+<blockquote>
+<p class="indent0">
     Granting special abilities can be accomplished
 with the SA tag in either a feat or a template.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Tag Used:
     </strong>
-    <code>SA:Scent (Ex) -
+<code>SA:Scent (Ex) -
 track by sense of smell</code>
-   </p>
-   <p class="indent1">
-    <strong>
+</p>
+<p class="indent1">
+<strong>
      What it Does:
     </strong>
     Grants to the
 character the ability to track by sense of smell.
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      Source:
     </strong>
     Taken from Template
@@ -785,9 +784,9 @@ character the ability to track by sense of smell.
     </em>
     .
    </p>
-  </blockquote>
-  <hr/>
-  <p>
-  </p>
- </body>
+</blockquote>
+<hr/>
+<p>
+</p>
+</body>
 </html>

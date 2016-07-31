@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
                 PCGen Documentation Project
                         
                 $Author$
@@ -14,47 +13,47 @@
                 Description:
                 Provides information on List files.
         -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    LST File Class
   </title>
-  <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Lesson #11: .lst - Default Monster Kits
   </h1>
-  <p>
+<p>
    By Aaron Divinsky (boomer70).
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     File(s) Covered:
    </strong>
    *kit_races.lst
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     PCGen LST Standard:
    </strong>
    PCGen
 6.00.x
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     GameMode:
    </strong>
    3.5e (RSRD)
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Tags used:
    </strong>
-  </p>
-  <p class="indent1">
-   <code><a href="../datafilestagpages/datafilesstartingkits.html#startpack">
+</p>
+<p class="indent1">
+<code><a href="../datafilestagpages/datafilesstartingkits.html#startpack">
      STARTPACK
     </a>
     ,
@@ -89,34 +88,34 @@
     <a href="../datafilestagpages/datafilesstartingkits.html#stat">
      STAT
     </a>
-    <a href="../datafilestagpages/datafilesstartingkits.html#skill">
+<a href="../datafilestagpages/datafilesstartingkits.html#skill">
      SKILL
     </a>
-    <a href="../datafilestagpages/datafilesstartingkits.html#rank">
+<a href="../datafilestagpages/datafilesstartingkits.html#rank">
      RANK
     </a>
-    <a href="../datafilestagpages/datafilesstartingkits.html#count">
+<a href="../datafilestagpages/datafilesstartingkits.html#count">
      COUNT
     </a>
-    <a href="../datafilestagpages/datafilesstartingkits.html#free">
+<a href="../datafilestagpages/datafilesstartingkits.html#free">
      FREE
     </a></code>
-  </p>
-  <hr/>
-  <p>
+</p>
+<hr/>
+<p>
    This lesson is intended to cover creating your own "Default
 Monster Kits".  Default Monster Kits are used to encode the
 information about the default version of a monster as provided in
 the source material.
   </p>
-  <p>
+<p>
    The first thing to note is that a different file set is used
 when creating Default Monster Kits than when creating the
 monster.  The files in question are called "Starting Kits" or
 just Kits for short.  Kit files have a slightly different
 syntax than other LST files you may already be familiar with.
   </p>
-  <p>
+<p>
    The format for a Kit file is each Kit starts with a
    <code>STARTPACK</code>
    tag and ends when the code sees another
@@ -131,7 +130,7 @@ multiple tags per line and these tags
    need to
 be tab separated.
   </p>
-  <p>
+<p>
    This lesson is not intended as a treatise on Kit files in
 general.  As always, see the documentation for more
 information on
@@ -140,75 +139,75 @@ information on
    </a>
    file tags.
   </p>
-  <p>
+<p>
    We will revisit our friends the Solar and the Ninja Monkey that
 we created in the previous lessons on races and use them as
 examples in this lesson as well.
   </p>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#startpack">
-    <strong>
-     <code>STARTPACK</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#startpack">
+<strong>
+<code>STARTPACK</code>
+</strong>
+</a>
+</p>
+<p>
    This tag defines the name of the Kit and also demarcates the
 beginning of a new Kit.  By convention we use "Default
 &lt;Monster name&gt;" as the name for a default monster kit.
   </p>
-  <p>
+<p>
    The Solar's entry would be:
   </p>
-  <blockquote>
-   <p>
-    <code>STARTPACK:Default Angel (Solar)</code>
-   </p>
-  </blockquote>
-  <p>
+<blockquote>
+<p>
+<code>STARTPACK:Default Angel (Solar)</code>
+</p>
+</blockquote>
+<p>
    The entry for the Ninja Monkey will be:
   </p>
-  <blockquote>
-   <p>
-    <code>STARTPACK:Default Ninja Monkey</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <strong>
-    <code>PRExxx</code>
-   </strong>
-  </p>
-  <p>
+<blockquote>
+<p>
+<code>STARTPACK:Default Ninja Monkey</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<strong>
+<code>PRExxx</code>
+</strong>
+</p>
+<p>
    Several items can appear on a
    <code>STARTPACK</code>
    line. One
 of those things is a prereq for anyone to be able to take that
 kit.  All global prereqs are allowable on this line.
   </p>
-  <p>
+<p>
    For default monsters we want to make sure that only a character
 with a matching race or no race selected can take the kit.  We
 don't want those pesky Ninja Monkeys selecting our Default Angel
 (Solar) kit.
   </p>
-  <p>
+<p>
    To do this we will add a
    <a href="../globalfilestagpages/globalfilesprexxx.html#prerace">
-    <code>PRERACE</code>
-   </a>
+<code>PRERACE</code>
+</a>
    tag to the
    <code>STARTPACK</code>
    line we started above. So we
 enter a few tabs and type:
   </p>
-  <blockquote>
-   <p>
-    <code>PRERACE:1,Angel (Solar)</code>
-   </p>
-  </blockquote>
-  <p>
+<blockquote>
+<p>
+<code>PRERACE:1,Angel (Solar)</code>
+</p>
+</blockquote>
+<p>
    However, we also want to allow new characters without a race to
 select this Kit. To do this we need to add a new tag to the
 prereq.  To have multiple prereqs we need to use the
@@ -220,55 +219,55 @@ without a race can select the Kit we use the syntax
    ".   So the final tag for the Solar
 would be:
   </p>
-  <blockquote>
-   <p>
-    <code>PREMULT:1,[PRERACE:1,Angel
+<blockquote>
+<p>
+<code>PREMULT:1,[PRERACE:1,Angel
 (Solar)],[!PRERACE:1,%]</code>
-   </p>
-  </blockquote>
-  <p>
+</p>
+</blockquote>
+<p>
    The tag will be very similar for the Ninja Monkey.
   </p>
-  <blockquote>
-   <p>
-    <code>PREMULT:1,[PRERACE:1,Ninja
+<blockquote>
+<p>
+<code>PREMULT:1,[PRERACE:1,Ninja
 Monkey],[!PRERACE:1,%]</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#equipbuy">
-    <strong>
-     <code>EQUIPBUY</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#equipbuy">
+<strong>
+<code>EQUIPBUY</code>
+</strong>
+</a>
+</p>
+<p>
    This tag is used to set the percentage of list price that
 creatures applying this kit must pay for equipment added through
 the kit.  Monsters are generally granted the equipment listed
 in the race write up for free so we generally want to set this to
 "0" meaning the equipment is granted for free.
   </p>
-  <p>
+<p>
    The code to do this would be (also on the
    <code>STARTPACK</code>
    line):
   </p>
-  <blockquote>
-   <p>
-    <code>EQUIPBUY:0</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#visible">
-    <strong>
-     <code>VISIBLE</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<blockquote>
+<p>
+<code>EQUIPBUY:0</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#visible">
+<strong>
+<code>VISIBLE</code>
+</strong>
+</a>
+</p>
+<p>
    This tag allows us to control the visibility of the Kit in the
 user interface.  This tag is also specified on the
    <code>STARTPACK</code>
@@ -277,20 +276,20 @@ the prerequisites we specified earlier) to take the kit to see it
 so we will enter "QUALIFY" as the visibility. We could also specify
 "YES" or "NO" to control the visibility of the kit.
   </p>
-  <blockquote>
-   <p>
-    <code>VISIBLE:QUALIFY</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#race">
-    <strong>
-     <code>RACE</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<blockquote>
+<p>
+<code>VISIBLE:QUALIFY</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#race">
+<strong>
+<code>RACE</code>
+</strong>
+</a>
+</p>
+<p>
    The next tag we will cover is the
    <code>RACE</code>
    tag. 
@@ -301,58 +300,58 @@ only set the race if the character doesn't' already have one (all
 other scenarios were excluded by the prereqs we entered earlier for
 the Kit).
   </p>
-  <p>
+<p>
    This brings up an important point to note, any kit line can be
 qualified with a
    <code>PREXXX</code>
    tag.  In our case we will
 use part of the prereq we entered for race above.
   </p>
-  <blockquote>
-   <p>
-    <code>RACE:Angel (Solar)&lt;tab&gt;!PRERACE:1,%</code>
-   </p>
-  </blockquote>
-  <p>
+<blockquote>
+<p>
+<code>RACE:Angel (Solar)&lt;tab&gt;!PRERACE:1,%</code>
+</p>
+</blockquote>
+<p>
    This tells the program execute this line to set the character's
 race to Angel (Solar) only if the character doesn't already have a
 race selected.  For the Ninja Monkey just replace Angel
 (Solar) with Ninja Monkey in the above line.
   </p>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#name">
-    <strong>
-     <code>NAME</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#name">
+<strong>
+<code>NAME</code>
+</strong>
+</a>
+</p>
+<p>
    Generally, we set the name of the monster character to the name
 of the monster exactly as it appears in the source.  We use
 the
    <code>NAME</code>
    to accomplish that.
   </p>
-  <blockquote>
-   <p>
-    <code>NAME:Solar</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#gender">
-    <strong>
-     <code>GENDER</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<blockquote>
+<p>
+<code>NAME:Solar</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#gender">
+<strong>
+<code>GENDER</code>
+</strong>
+</a>
+</p>
+<p>
    Sometimes a particular monster always has a certain gender, or
 no gender at all.  Neither the Solar nor the Ninja Monkey
 specify a particular gender so we will skip this tag for them
   </p>
-  <p>
+<p>
    Just to illustrate if you wanted to create a special female
 version of the Solar you could specify
    <code>GENDER:Female</code>
@@ -360,54 +359,54 @@ version of the Solar you could specify
    <code>NAME</code>
    line or on its own line.
   </p>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#align">
-    <strong>
-     <code>ALIGN</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#align">
+<strong>
+<code>ALIGN</code>
+</strong>
+</a>
+</p>
+<p>
    Next up is alignment.  Obviously if the creatures specifies
 that it is "Always" a particular alignment you can simply specify
 that in the Kit and any characters created using the kit will have
 the appropriate alignment.
   </p>
-  <p>
+<p>
    The Solar specified that they are "Always Good (Any)".  We
 can code that in a Kit as follows:
   </p>
-  <blockquote>
-   <p>
-    <code>ALIGN:LG|NG|CG</code>
-   </p>
-  </blockquote>
-  <p>
+<blockquote>
+<p>
+<code>ALIGN:LG|NG|CG</code>
+</p>
+</blockquote>
+<p>
    This will present a chooser to the user when the kit is applied
 allowing them to select one of the three specified alignments.
   </p>
-  <p>
+<p>
    If you remember back to our earlier lesson, we did not all a
 PREALIGN for the Ninja Monkey because they were listed as "Usually
 Chaotic Good".  Since we are creating a kit for the "usual"
 case (default) we will specify Chaotic Good as the alignment for
 our Default Ninja Monkey.
   </p>
-  <blockquote>
-   <p>
-    <code>ALIGN:CG</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#stat">
-    <strong>
-     <code>STAT</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<blockquote>
+<p>
+<code>ALIGN:CG</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#stat">
+<strong>
+<code>STAT</code>
+</strong>
+</a>
+</p>
+<p>
    With this tag we can set a character's base stats.  For
 default monsters the logic is the base stat is 10 unless the value
 listed in the write up is odd in which case the base stat is
@@ -415,64 +414,64 @@ listed in the write up is odd in which case the base stat is
 monster uses a different set of stats, usually the non-elite
 array.
   </p>
-  <p>
+<p>
    It is a good idea to explicitly set each stat a default monster
 possesses (is not a nonability) because otherwise a users
 preference will be used.
   </p>
-  <p>
+<p>
    Returning to our examples the
    <code>STAT</code>
    line for the
 Solar would look like:
   </p>
-  <blockquote>
-   <p>
-    <code>STAT:STR=10|DEX=10|CON=10|INT=11|WIS=11|CHA=11</code>
-   </p>
-  </blockquote>
-  <p>
+<blockquote>
+<p>
+<code>STAT:STR=10|DEX=10|CON=10|INT=11|WIS=11|CHA=11</code>
+</p>
+</blockquote>
+<p>
    Our Ninja Monkey has stats of Str 17, Dex 18, Con 14, Int 11,
 Wis 15, Cha 10 so our stat line looks like:
   </p>
-  <blockquote>
-   <p>
-    <code>STAT:STR=11|DEX=10|CON=10|INT=11|WIS=11|CHA=10</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#skill">
-    <strong>
-     <code>SKILL</code>
-    </strong>
-   </a>
+<blockquote>
+<p>
+<code>STAT:STR=11|DEX=10|CON=10|INT=11|WIS=11|CHA=10</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#skill">
+<strong>
+<code>SKILL</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#rank">
-    <strong>
-     <code>RANK</code>
-    </strong>
-   </a>
+<strong>
+<code>RANK</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#count">
-    <strong>
-     <code>COUNT</code>
-    </strong>
-   </a>
+<strong>
+<code>COUNT</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#free">
-    <strong>
-     <code>FREE</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<strong>
+<code>FREE</code>
+</strong>
+</a>
+</p>
+<p>
    This set of tags, which must appear on the same line, allows you
 to buy skill ranks in a skill for the character applying the kit.
 All of the comments under the section for
    <a href="../globalfilestagpages/globalfilesbonus.html#skillrank">
-    <code>BONUS:SKILLRANK</code>
-   </a>
+<code>BONUS:SKILLRANK</code>
+</a>
    apply here as well, except that the workaround for skills which
 require a choice is not required. To handle a choice of skills in a
 default kit we enter all the choices separated by a pipe (|)
@@ -484,7 +483,7 @@ You can specify specific skills or types of skills like
    <code>TYPE=Knowledge</code>
    .
   </p>
-  <p>
+<p>
    The skills are granted exactly as if you had picked them from
 the user interface. The character must have sufficient skill points
 to buy the listed skills. Occasionally a source will grant more
@@ -500,7 +499,7 @@ the source appears to be in error or you can use the
 grant the extra ranks for "free" (no skill points will be
 spent).
   </p>
-  <p>
+<p>
    The kit will also enforce the user preference for Max Ranks for
 a skill. Sometimes in order to get the listed total bonus to a
 skill it would be necessary to grant more ranks than the max ranks
@@ -508,16 +507,16 @@ for a skill. Usually this happens with cross-class skills. To allow
 the skill to go above the maximum you can set the "Bypass Max Skill
 Rank" setting in the PCGen preferences.
   </p>
-  <p>
+<p>
    With all that being said our we would add the following lines to
 our Solar kit (each SKILL/RANK pair should be on a new line,
 replace
    <code>TAB</code>
    with a real tab character):
   </p>
-  <blockquote>
-   <p>
-    <code>SKILL:Diplomacy &lt;tab&gt; RANK:23
+<blockquote>
+<p>
+<code>SKILL:Diplomacy &lt;tab&gt; RANK:23
      <br/>
      SKILL:Concentration &lt;tab&gt; RANK:25
      <br/>
@@ -540,14 +539,14 @@ replace
      SKILL:TYPE=Knowledge|TYPE=Craft &lt;tab&gt; RANK:25
 &lt;tab&gt; COUNT:5
      <br/></code>
-   </p>
-  </blockquote>
-  <p>
+</p>
+</blockquote>
+<p>
    Our Ninja Monkey will be very similar:
   </p>
-  <blockquote>
-   <p>
-    <code>SKILL:Hide &lt;tab&gt; RANK:4
+<blockquote>
+<p>
+<code>SKILL:Hide &lt;tab&gt; RANK:4
      <br/>
      SKILL:Listen &lt;tab&gt; RANK:3
      <br/>
@@ -555,23 +554,23 @@ replace
      <br/>
      SKILL:Spot &lt;tab&gt; RANK:3
      <br/></code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#feat">
-    <strong>
-     <code>FEAT</code>
-    </strong>
-   </a>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#feat">
+<strong>
+<code>FEAT</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#free">
-    <strong>
-     <code>FREE</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<strong>
+<code>FREE</code>
+</strong>
+</a>
+</p>
+<p>
    The
    <code>FEAT</code>
    tag is a very simple one. It simply lists
@@ -590,12 +589,12 @@ on the
 charging the feat pool. This would primarily useful if a creature
 has more feats than it should for its HD.
   </p>
-  <p>
+<p>
    Our Solar is fairly straightforward. The code appears below.
   </p>
-  <blockquote>
-   <p>
-    <code>FEAT:Cleave
+<blockquote>
+<p>
+<code>FEAT:Cleave
      <br/>
      FEAT:Dodge
      <br/>
@@ -607,35 +606,35 @@ has more feats than it should for its HD.
      <br/>
      FEAT:Power Attack
      <br/></code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-   <a href="../datafilestagpages/datafilesstartingkits.html#gear">
-    <strong>
-     <code>GEAR</code>
-    </strong>
-   </a>
+</p>
+</blockquote>
+<hr/>
+<p>
+<a href="../datafilestagpages/datafilesstartingkits.html#gear">
+<strong>
+<code>GEAR</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#eqmod">
-    <strong>
-     <code>EQMOD</code>
-    </strong>
-   </a>
+<strong>
+<code>EQMOD</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#size">
-    <strong>
-     <code>SIZE</code>
-    </strong>
-   </a>
+<strong>
+<code>SIZE</code>
+</strong>
+</a>
    /
    <a href="../datafilestagpages/datafilesstartingkits.html#location">
-    <strong>
-     <code>LOCATION</code>
-    </strong>
-   </a>
-  </p>
-  <p>
+<strong>
+<code>LOCATION</code>
+</strong>
+</a>
+</p>
+<p>
    The last set of tags we need to cover to complete our Solar and
 Ninja Monkey examples are the
    <code>GEAR</code>
@@ -648,7 +647,7 @@ enter this into the kit we first grant the base item with the
    <code>GEAR:Greatsword</code>
    .
   </p>
-  <p>
+<p>
    Then we need to add the special abilities to the base
 item.  We do this by adding EQMODs just like using the
 equipment customizer.  For the greatsword we need to add the
@@ -678,7 +677,7 @@ earlier:
    <code>EQMOD:MWORKW.PLUS5W.DANCE.VORPAL</code>
    .
   </p>
-  <p>
+<p>
    Now we need to make sure that the item is the correct size for
 the creature we are creating.  By default, PCGen creates all
 items at Medium size.  Our Solar however is a Large size
@@ -700,7 +699,7 @@ size the character is.  We will add the
    line to make sure that the Solar's
 greatsword grows if it does (by adding HD).
   </p>
-  <p>
+<p>
    The last thing we need to do is equip the item.  If we do
 not equip the item the gear will be added to the character as a
 possession but will not be used.  This could be useful for
@@ -719,32 +718,32 @@ ring) you can simply specify "Equipped" in the
    tag and PCGen will equip it to the correct
 location.
   </p>
-  <p>
+<p>
    Now if we put it all together, our kit lines for the Solar's
 equipment will look like this:
   </p>
-  <blockquote>
-   <p>
-    <code>GEAR:Greatsword &lt;tab&gt;
+<blockquote>
+<p>
+<code>GEAR:Greatsword &lt;tab&gt;
 EQMOD:MWORKW.PLUS5W.DANCE.VORPAL &lt;tab&gt; SIZE:PC &lt;tab&gt;
 LOCATION:Both Hands
      <br/>
      GEAR:Longbow (Composite) &lt;tab&gt; EQMOD:MWORKW.BOWSTR|5.PLUS2W
 &lt;tab&gt; SIZE:PC &lt;tab&gt; LOCATION:Carried</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
+</p>
+</blockquote>
+<hr/>
+<p>
    Well, this brings to a close the lessons on creating monster
 kits for use in PCGen. There is much more you can do with kits. I
 encourage you to check out the documentation for more in depth
 information on everything kits can do.
   </p>
-  <p>
+<p>
    Aaron, Docs 2nd
   </p>
-  <hr/>
-  <p>
-  </p>
- </body>
+<hr/>
+<p>
+</p>
+</body>
 </html>

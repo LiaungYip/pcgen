@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
                 PCGen Documentation Project 
 
                 $Author: karianna $ 
@@ -13,26 +12,26 @@
                 
                 Description: Provides information on building a Homebrew Data Set. 
         -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    LST File Class
   </title>
-  <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Lesson #00: Building a Homebrew Data Set
   </h1>
-  <p>
+<p>
    By Eric C. Smith (Maredudd)
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    LST File Class Overview
   </h3>
-  <p class="indent0">
+<p class="indent0">
    This LST File class will briefly cover how to
 build a homebrew data set using the
    <strong>
@@ -40,136 +39,136 @@ build a homebrew data set using the
    </strong>
    template provided by the PCGen team.
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     File Covered
    </strong>
    : my_homebrew
 files
   </p>
-  <table border="0">
-   <tr>
-    <td colspan="4">
-     <a href="#pcc">
+<table border="0">
+<tr>
+<td colspan="4">
+<a href="#pcc">
       my_campaign.pcc
      </a>
-    </td>
-   </tr>
-   <tr style="vertical-align:text-top;">
-    <td>
-     <p>
-      <a href="#ability">
+</td>
+</tr>
+<tr style="vertical-align:text-top;">
+<td>
+<p>
+<a href="#ability">
        my_abilities.lst
       </a>
-      <br/>
-      <a href="#abilitycategory">
+<br/>
+<a href="#abilitycategory">
        my_ability_categories.lst
       </a>
-      <br/>
-      <a href="#armorprof">
+<br/>
+<a href="#armorprof">
        my_armorprofs.lst
       </a>
-      <br/>
-      <a href="#class">
+<br/>
+<a href="#class">
        my_classes.lst
       </a>
-      <br/>
-      <a href="#companionmod">
+<br/>
+<a href="#companionmod">
        my_companionmods.lst
       </a>
-      <br/>
-     </p>
-    </td>
-    <td>
-     <p>
-      <a href="#deity">
+<br/>
+</p>
+</td>
+<td>
+<p>
+<a href="#deity">
        my_deities.lst
       </a>
-      <br/>
-      <a href="#domain">
+<br/>
+<a href="#domain">
        my_domains.lst
       </a>
-      <br/>
-      <a href="#equipment">
+<br/>
+<a href="#equipment">
        my_equipment.lst
       </a>
-      <br/>
-      <a href="#equipmod">
+<br/>
+<a href="#equipmod">
        my_equipmods.lst
       </a>
-      <br/>
-      <a href="#race">
+<br/>
+<a href="#race">
        my_races.lst
       </a>
-      <br/>
-     </p>
-    </td>
-    <td>
-     <p>
-      <a href="#feat">
+<br/>
+</p>
+</td>
+<td>
+<p>
+<a href="#feat">
        my_feats.lst
       </a>
-      <br/>
-      <a href="#kit">
+<br/>
+<a href="#kit">
        my_kits.lst
       </a>
-      <br/>
-      <a href="#language">
+<br/>
+<a href="#language">
        my_languages.lst
       </a>
-      <br/>
-      <a href="#race">
+<br/>
+<a href="#race">
        my_races.lst
       </a>
-      <br/>
-      <a href="#shieldprof">
+<br/>
+<a href="#shieldprof">
        my_shieldprofs.lst
       </a>
-      <br/>
-     </p>
-    </td>
-    <td>
-     <p>
-      <a href="#skill">
+<br/>
+</p>
+</td>
+<td>
+<p>
+<a href="#skill">
        my_skills.lst
       </a>
-      <br/>
-      <a href="#spell">
+<br/>
+<a href="#spell">
        my_spells.lst
       </a>
-      <br/>
-      <a href="#template">
+<br/>
+<a href="#template">
        my_templates.lst
       </a>
-      <br/>
-      <a href="#weaponprof">
+<br/>
+<a href="#weaponprof">
        my_weaponprofs.lst
       </a>
-     </p>
-    </td>
-   </tr>
-  </table>
-  <hr/>
-  <h3>
+</p>
+</td>
+</tr>
+</table>
+<hr/>
+<h3>
    Reading Conventions
   </h3>
-  <p class="indent0">
+<p class="indent0">
    A quick note on a few general conventions used
 within this class before we jump into it:
   </p>
-  <p class="indent0">
+<p class="indent0">
    1) Throughout this lesson the angle brackets
 (&lt;&gt;) are used to indicate where your text will be entered
 when building a data file. Unless explicitly stated in the text,
 you will not include the angle brackets in your tags.
   </p>
-  <p class="indent0">
+<p class="indent0">
    2) Coding examples and PCGen tags are identified
 by
    <code>&lt;code&gt;</code>
    style.
   </p>
-  <p class="indent0">
+<p class="indent0">
    3) Files referenced in this lesson are
 identified by
    <span class="lstfile">
@@ -177,7 +176,7 @@ identified by
    </span>
    style.
   </p>
-  <p class="indent0">
+<p class="indent0">
    4) When referencing a specific PCGen object,
 i.e. deity, feat, weapon, etc., the object name will be formated as
    <span class="lstobj">
@@ -188,18 +187,18 @@ is part of a
    <code>&lt;code&gt;</code>
    example.
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Data Set Creation Overview
   </h3>
-  <!--    This paragraph has been commented out. Once the LST Editor has been added back to PCGen this paragraph should be uncommented and updated as necessary and the immediate following paragraph should be deleted.
+<!--    This paragraph has been commented out. Once the LST Editor has been added back to PCGen this paragraph should be uncommented and updated as necessary and the immediate following paragraph should be deleted.
                 <p class="indent0">All PCGen data sets are made up of a collection of text files called LST files, each of which contains a particular type of LST Object, e.g. Class, 
                         Deity, Feat, Race, etc. PCGen includes built-in LST Editors that can be used to create new LST objects but many LST monkeys find it easier to build data sets from 
                         the ground up. For the new LST monkey though, this can be confusing so the PCGen team has provided a basic template for a data set. This template can be found in PCGen's
                         <i>data/&lt;gamemode - 35e or pathfinder&gt;/my_homebrew</i> folder. In this LST Class we will provide an introduction to the <strong>my_homebrew</strong> homebrew data set template and get you 
                         started building your own data set, whether it's for your own homebrewed campaign or a simple addition or modification of an existing one to incorporate house rules.</p>
 -->
-  <p class="indent0">
+<p class="indent0">
    All PCGen data sets are made up of a collection
 of text files called LST files, each of which contains a particular
 type of LST Object, e.g. Class, Deity, Feat, Race, etc. For the new
@@ -220,17 +219,17 @@ set template and get you started building your own data set,
 whether it's for your own homebrewed campaign or a simple addition
 or modification of an existing one to incorporate house rules.
   </p>
-  <p class="indent0">
+<p class="indent0">
    You will find below a short introduction to the
 data set template itself, followed by a section that will cover
 each of the files which can be found in the data set, covering each
 of the files listed below:
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Introduction to the my_homebrew Files
   </h3>
-  <p class="indent0">
+<p class="indent0">
    The
    <span class="lstfile">
     my_homebrew
@@ -272,7 +271,7 @@ new class, and enter your new data there. Each LST file includes an
 example to give you a feel for what an entry in that particular
 type of file would look like.
   </p>
-  <p class="indent0">
+<p class="indent0">
    You will find below more information about each
 LST file, and the LST objects that are defined in them, but you
 will also need to become familiar with PCGen's included
@@ -291,7 +290,7 @@ by
    </a>
    to get help.
   </p>
-  <p class="indent0">
+<p class="indent0">
    Once you have created or editing your LST file
 you will need to edit the
    <span class="lstfile">
@@ -304,7 +303,7 @@ Remove the '#' from the beginning of the corresponding line. You
 might also want to change the game mode, as it is now set to '35e',
 if your custom data is meant for a different game mode.
   </p>
-  <p class="indent0">
+<p class="indent0">
    You may also note a file called
    <span class="lstfile">
     OGL.txt
@@ -315,7 +314,7 @@ because the examples in the *.lst files were mostly drawn from our
 dataset for the 3.5 System Reference Document. It is not needed for
 your dataset to function.
   </p>
-  <p class="indent0">
+<p class="indent0">
    If you use this framework to set up a dataset of
 your own, then you may want to rename the folder and files to
 something different. Otherwise if you ever should install a newer
@@ -323,14 +322,14 @@ version of PCGen into your existing directory or needed to
 re-install your existing installation of PCGen, your changes would
 get overwritten and thus be lost.
   </p>
-  <hr/>
-  <h3>
-   <a id="pcc" name="pcc">
+<hr/>
+<h3>
+<a id="pcc" name="pcc">
     The PCGen Campaign Configuration (PCC)
 File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    The PCC file is the most important file in a
 data set as it is the file that PCGen uses to identify what data
 sets are available. Without the PCC file, no data set would be
@@ -339,7 +338,7 @@ we start with the PCC file. Beyond identifying the data set as a
 loadable set, the file also provides PCGen with information on the
 campaign itself as well as the specific LST files to be loaded.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a PCC file see
    <a href="lfc_lesson01_pcc.html">
     LST File Class #1: The PCC -
@@ -352,16 +351,16 @@ File Class #2: The PCC - Basic File Types
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="ability" name="ability">
+<hr/>
+<h3>
+<a id="ability" name="ability">
     The Ability File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on converting Feats to
 Abilities see
    <a href="lfc_lesson17_converting_feats_to_abilities.html">
@@ -370,55 +369,55 @@ Abilities see
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="abilitycategory" name="abilitycategory">
+<hr/>
+<h3>
+<a id="abilitycategory" name="abilitycategory">
     The Ability
 Category File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="armorprof" name="armorprof">
+<hr/>
+<h3>
+<a id="armorprof" name="armorprof">
     The Armor Proficiency
 File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="class" name="class">
+<hr/>
+<h3>
+<a id="class" name="class">
     The Class File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="companionmod" name="companionmod">
+<hr/>
+<h3>
+<a id="companionmod" name="companionmod">
     The Companion
 Modification File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="deity" name="deity">
+<hr/>
+<h3>
+<a id="deity" name="deity">
     The Deity File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Deity file
 see
    <a href="lfc_lesson14_deities.html">
@@ -427,16 +426,16 @@ Deities
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="domain" name="domain">
+<hr/>
+<h3>
+<a id="domain" name="domain">
     The Domain File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Domain file
 see
    <a href="lfc_lesson15_domains1.html">
@@ -450,35 +449,35 @@ Basics
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="equipment" name="equipment">
+<hr/>
+<h3>
+<a id="equipment" name="equipment">
     The Equipment File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="eqmod" name="eqmod">
+<hr/>
+<h3>
+<a id="eqmod" name="eqmod">
     The Equipment Modification
 File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="feat" name="feat">
+<hr/>
+<h3>
+<a id="feat" name="feat">
     The Feat File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Feat file see
    <a href="lfc_lesson12_feat1.html">
     LST File Class #2: Feat
@@ -491,16 +490,16 @@ Basics
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="language" name="language">
+<hr/>
+<h3>
+<a id="language" name="language">
     The Language File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Language file
 see
    <a href="lfc_lesson10_languages.html">
@@ -509,16 +508,16 @@ Languages
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="race" name="race">
+<hr/>
+<h3>
+<a id="race" name="race">
     The Race File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Feat file see
    <a href="lfc_lesson03_race1.html">
     LST File Class #3: Races 1
@@ -539,35 +538,35 @@ and
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="shieldproficiency" name="shieldproficiency">
+<hr/>
+<h3>
+<a id="shieldproficiency" name="shieldproficiency">
     The Shield
 Proficiency File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="skill" name="skill">
+<hr/>
+<h3>
+<a id="skill" name="skill">
     The Skill File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="spell" name="spell">
+<hr/>
+<h3>
+<a id="spell" name="spell">
     The Spell File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Spell file
 see
    <a href="lfc_lesson07_spells.html">
@@ -576,16 +575,16 @@ Spells
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="kit" name="kit">
+<hr/>
+<h3>
+<a id="kit" name="kit">
     The Starting Kit File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Starting Kit
 file see
    <a href="lfc_lesson11_kits_default_monster.html">
@@ -594,26 +593,26 @@ Class #11: Default Monster Kits
    </a>
    .
   </p>
-  <hr/>
-  <h3>
-   <a id="template" name="template">
+<hr/>
+<h3>
+<a id="template" name="template">
     The Template File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <hr/>
-  <h3>
-   <a id="weaponproficiency" name="weaponproficiency">
+<hr/>
+<h3>
+<a id="weaponproficiency" name="weaponproficiency">
     The Weapon
 Proficiency File
    </a>
-  </h3>
-  <p class="indent0">
+</h3>
+<p class="indent0">
    This section TBD.
   </p>
-  <p class="indent0">
+<p class="indent0">
    For more information on building a Weapon
 Proficiency file see
    <a href="lfc_lesson09_weaponprofs.html">
@@ -622,18 +621,18 @@ File Class #09: Weaponprofs
    </a>
    .
   </p>
-  <hr/>
-  <p class="indent0">
+<hr/>
+<p class="indent0">
    You should now have at least a basic
 understanding of how a homebrew data set should be organized. Take
 a look at the LST File Classes linked to in this article for more
 detail.
   </p>
-  <p class="indent0">
+<p class="indent0">
    Maredudd
   </p>
-  <hr/>
-  <p>
-  </p>
- </body>
+<hr/>
+<p>
+</p>
+</body>
 </html>

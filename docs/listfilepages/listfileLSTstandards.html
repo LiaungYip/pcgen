@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--
                 PCGen Documentation Project
@@ -16,12 +15,10 @@
                 Provides information on Official Release LST standards.
         -->
 <head>
-<meta name="generator" content=
-"HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" />
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
 <title>Official Release LST standards</title>
-<link rel="stylesheet" type="text/css" href="../pcgen.css" />
-<meta http-equiv="Content-Type" content=
-"text/html; charset=us-ascii" />
+<link href="../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 </head>
 <body>
 <h1>Official Release LST standards</h1>
@@ -43,26 +40,26 @@ the mechanics behind it on the character sheet.</p>
 <li>Defined in List files (GameMode or otherwise) =
 ProperCase.</li>
 </ul>
-<p><strong>Example:</strong><br />
+<p><strong>Example:</strong><br/>
 <code>BONUS:COMBAT|AC|5|TYPE=MyType</code></p>
 <p>BONUS, COMBAT, AC, and TYPE= are all hardcoded. MyType is
 defined in the List file (because it just got added!)</p>
-<p><strong>Example:</strong><br />
+<p><strong>Example:</strong><br/>
 <code>VISIBLE:YES, VISIBLE:NO, VISIBLE:DISPLAY,
 VISIBLE:EXPORT</code></p>
 <p>YES, NO, DISPLAY, and EXPORT are the only valid values of the
-VISIBLE tag.&nbsp; Since those values and what they do are
+VISIBLE tag.  Since those values and what they do are
 hardcoded into PCGen, they are done in ALLCAPS in the data
 files.</p>
 <h2>Basics:</h2>
 <ol>
 <li>
 <p>Plain TEXT file, with a .LST ending for data files, or .PCC for
-campaign files, instead of .txt<br />
+campaign files, instead of .txt<br/>
 Use Text editors, such as Wordpad (notepad sometimes has problems
-with the length of the lines), UltraEdit, Textpad, vi, or ee.<br />
+with the length of the lines), UltraEdit, Textpad, vi, or ee.<br/>
 Microsoft Word has problems with formatting and layout of text, it
-is not recommended to be used to create files.<br />
+is not recommended to be used to create files.<br/>
 Some LST Monkeys use Excel, and export to a tab delimitated file,
 which works.</p>
 </li>
@@ -72,7 +69,7 @@ should NEVER be the first character on a line.</p>
 </li>
 <li>
 <p>Make sure the first character is either a # (for comment) or a
-name of the object being defined such as a TAG.<br />
+name of the object being defined such as a TAG.<br/>
 Tabs and spaces are hard to see, and cause loading issues.</p>
 </li>
 <li>
@@ -80,17 +77,17 @@ Tabs and spaces are hard to see, and cause loading issues.</p>
 standard for columnizing the files.</p>
 </li>
 <li>Comments on ANYTHING you are unsure about, or haven't been able
-to implement correctly.<br />
-Comments are always done on their own line, and start with #.<br />
+to implement correctly.<br/>
+Comments are always done on their own line, and start with #.<br/>
 <ul>
 <li>If you have a suggestion on how to do something, but not
 totally sure, include that.</li>
 <li>If you have a suggestion on how to do something that would
-require some code changes, comment on that.<br /></li>
+require some code changes, comment on that.<br/></li>
 </ul>
 </li>
 <li>Comment line at top of LST files: # Original Entry by: &lt;your
-name&gt;.<br />
+name&gt;.<br/>
 You want credit for the hard work you've done, right?</li>
 </ol>
 <h2 name="ogl">OGL Compliance</h2>
@@ -103,10 +100,8 @@ be used by other publishers seeking publish content based on the
 original publishers work. Open Game Content is any material that is
 distributed using the Open Game License clearly identified by the
 publisher as Open Game Content.</p>
-<p>You can read the OGL <a href=
-"../acknowledgments/ogllicense.html">here in our documentation</a>
-or here at <a href=
-"http://www.wizards.com/default.asp?x=d20/welcome">Wizards of the
+<p>You can read the OGL <a href="../acknowledgments/ogllicense.html">here in our documentation</a>
+or here at <a href="http://www.wizards.com/default.asp?x=d20/welcome">Wizards of the
 Coast's web site</a> which contains additional information about
 the OGL.</p>
 <p>PCGen publishes its data via the OGL. As an OGL publisher we
@@ -134,9 +129,9 @@ follow the restrictions set by it down to the letter.</p>
 <ol>
 <li>
 <p>ONLY and EXACTLY what is in the Sec. 15 of the OGL.
-<strong>VERBATIM</strong>.<br />
-If there are Typos, leave them in.&nbsp; Weird characters, leave
-them in.&nbsp; Stupid comments, leave them in.<br />
+<strong>VERBATIM</strong>.<br/>
+If there are Typos, leave them in.  Weird characters, leave
+them in.  Stupid comments, leave them in.<br/>
 Including a scanned page from the book with your submission would
 be nice but not completely necessary.</p>
 </li>
@@ -248,7 +243,7 @@ instead of pipes.</p>
 </li>
 <li>
 <p><strong>SOURCESHORT</strong>:&lt;10 letter or less abbreviation
-of the name of the product&gt;<br />
+of the name of the product&gt;<br/>
 Leave the first name of the product whole, if possible.</p>
 </li>
 <li>
@@ -256,13 +251,13 @@ Leave the first name of the product whole, if possible.</p>
 or product group if the publisher has a page for that&gt;</p>
 </li>
 <li>
-<p><strong>SOURCEPAGE</strong> is done on object lines.<br />
+<p><strong>SOURCEPAGE</strong> is done on object lines.<br/>
 Use the first page the object is described (so if a class is
-defined on pages 51-54, the tag would read SOURCEPAGE:p.51)<br />
+defined on pages 51-54, the tag would read SOURCEPAGE:p.51)<br/>
 Format should be SOURCEPAGE:p.#</p>
 </li>
 </ul>
-<h3><a name="STDSPELLNAME" id="STDSPELLNAME">Standard Spellbook
+<h3><a id="STDSPELLNAME" name="STDSPELLNAME">Standard Spellbook
 Names</a></h3>
 <p>Spellbook names for the <code>SPELLS</code> tags are used to
 identify the source of a Spell Like Ability (SLA). The Spellbook is
@@ -276,19 +271,19 @@ one of three spellbook names to indicate the origin of the
 spell-like ability.</p>
 <ol class="indent1">
 <li><strong>Innate</strong> - For racial and template acquired
-SLA's<br />
-If it comes from a race, the race name (Gnome, etc)<br />
-<br /></li>
+SLA's<br/>
+If it comes from a race, the race name (Gnome, etc)<br/>
+<br/></li>
 <li><strong>Class Ability</strong> - For SLA's derived from
-classes.<br />
+classes.<br/>
 If it comes from a class, the class name (Sentinel, Paladin,
-etc)<br />
-<br /></li>
+etc)<br/>
+<br/></li>
 <li><strong>Magic Item</strong> - For SLA's provided by
-equipment.<br />
+equipment.<br/>
 If it comes from an magic item, the item name (Belt of Magic
-Spells, etc)<br />
-<br /></li>
+Spells, etc)<br/>
+<br/></li>
 </ol>
 <h3>SAB (formerly SA)</h3>
 <ol>
@@ -301,9 +296,9 @@ Source: (Ex) (Su) (Sp) etc. If not mentioned, don't put one.</p>
 </li>
 <li>
 <p>If there is a Dynamic formula, and the formula can be
-calculated, it can be included, but no Formulas described.<br />
+calculated, it can be included, but no Formulas described.<br/>
 See Monk Stun, and Dragon SA's. If it has a static range (like 10'
-no matter what) then that should not be listed.<br />
+no matter what) then that should not be listed.<br/>
 The user will need to own the source in that case. The dynamic
 formulas should be done via DEFINE/BONUS:VAR tags.</p>
 </li>
@@ -311,7 +306,7 @@ formulas should be done via DEFINE/BONUS:VAR tags.</p>
 <h3>DESC (Feats, Spells, Deities, Domains)</h3>
 <ol>
 <li>
-<p>Check for Open Game Content.&nbsp; If the DESC (see below for
+<p>Check for Open Game Content.  If the DESC (see below for
 what to look for) is not OGC, leave as DESC:See text.</p>
 </li>
 <li>
@@ -410,8 +405,6 @@ ensure items are being compared properly.</p>
 </ul>
 </li>
 </ol>
-<p><a href="http://validator.w3.org/check?uri=referer"><img src=
-"../images/system/valid-html401.png" alt="Valid HTML 4.01 Strict"
-height="31" width="88" /></a></p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img alt="Valid HTML 4.01 Strict" height="31" src="../images/system/valid-html401.png" width="88"/></a></p>
 </body>
 </html>

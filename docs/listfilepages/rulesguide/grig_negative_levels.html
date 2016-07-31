@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
                 PCGen Documentation Project
                         
                 $Author$
@@ -14,53 +13,53 @@
                 Description:
                 Provides information on specific rules implamentation in the LST files.
         -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    Game Rules Implementation Guide
   </title>
-  <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Equipment Granting Negative Levels
   </h1>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Rule Description:
    </strong>
    The granting
 of "Negative Levels" to characters by equipment.
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     PCGen Version:
    </strong>
    5.8.x to
 current.
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Gamemode/Dataset:
    </strong>
    35e/RSRD
 Complete
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     File(s) Covered:
    </strong>
    equipment.lst
 and feat.lst
   </p>
-  <p class="indent0">
-   <strong>
+<p class="indent0">
+<strong>
     Tags Used:
    </strong>
-  </p>
-  <p class="indent1">
-   <a href="../datafilestagpages/datafilesfeats.html#type">
+</p>
+<p class="indent1">
+<a href="../datafilestagpages/datafilesfeats.html#type">
     TYPE
    </a>
    ,
@@ -87,18 +86,18 @@ and feat.lst
    <a href="../globalfilestagpages/globalfilesbonus.html#skill">
     BONUS:SKILL
    </a>
-   <a href="../globalfilestagpages/globalfilesother.html#vfeat">
+<a href="../globalfilestagpages/globalfilesother.html#vfeat">
     VFEAT
    </a>
    ,
    <a href="../globalfilestagpages/globalfilesbonus.html#var">
     BONUS:VAR
    </a>
-   <a href="../globalfilestagpages/globalfilesprexxx.html#prealign">
+<a href="../globalfilestagpages/globalfilesprexxx.html#prealign">
     PREALIGN
    </a>
-  </p>
-  <p class="sidebar1">
+</p>
+<p class="sidebar1">
    NOTE: In this section we will discuss only
 those LST tags specific to this implementation, and how they are
 used to implement the subject rule. For more general information on
@@ -109,11 +108,11 @@ Index
    </a>
    section of the PCGen Documentation.
   </p>
-  <hr/>
-  <h2>
+<hr/>
+<h2>
    Implementation Discussion
   </h2>
-  <p class="indent1">
+<p class="indent1">
    Implementing "Negative Levels" for equipment
 that is "equiped" requires two specific LST entries. These are a
    <span class="lstfile">
@@ -133,12 +132,12 @@ as long as the homebrew rules are based upon one of the datasets
 that have the rule already implemented. The steps to follow in this
 case are as follows:
   </p>
-  <ol>
-   <li>
+<ol>
+<li>
     Make sure the hidden feat "Negative Levels" is loaded when you
 load your datasets on the "Source Materials" tab.
    </li>
-   <li>
+<li>
     When creating the
     <span class="lstfile">
      equipment.lst
@@ -155,7 +154,7 @@ the
     tag below for more information on
 how it works.
    </li>
-   <li>
+<li>
     Add a
     <code>BONUS:VAR|NegLevels|#|PRExxx</code>
     tag in the
@@ -170,7 +169,7 @@ with the number of negative levels being lost. See the
     tag below for more information on how it
 works.
    </li>
-   <li>
+<li>
     The PRExxx tag used in the
     <code>BONUS:VAR</code>
     tag above is
@@ -186,8 +185,8 @@ would be used. See the
     tag
 description below for more information on how it works.
    </li>
-  </ol>
-  <p class="indent1">
+</ol>
+<p class="indent1">
    If you are not using a dataset that already
 implements the "Negative Levels" rule you will follow the same
 steps above except that you will need to create the feat of the
@@ -209,7 +208,7 @@ Armor
    </span>
    entry from the RSRD.
   </p>
-  <p class="indent1">
+<p class="indent1">
    Finally, for assistance in understanding how to
 read this page you may review the
    <a href="../rulesguide/game_rules_reading_instructions.html">
@@ -218,11 +217,11 @@ Guide
    </a>
    .
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    Feat File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    The specific feat entry in the
    <span class="lstfile">
     feat.lst
@@ -238,25 +237,25 @@ applied. The penalties, in this case, include a reduction to
 characters "To Hit" bonus, and a reduction in skill bonuses across
 the board. The tags used are explained below:
   </p>
-  <blockquote class="indent1">
-   <blockquote class="indent0">
-    <p class="tagindent3">
-     <strong>
+<blockquote class="indent1">
+<blockquote class="indent0">
+<p class="tagindent3">
+<strong>
       Tag Used:
      </strong>
-     <code>SA:%
+<code>SA:%
 negative level(s) (-% effective level(s) and loses access to %
 spell(s) from the highest spell level
 castable)|NegLevels|NegLevels|NegLevels</code>
-    </p>
-   </blockquote>
-   <p class="indent1">
-    <strong>
+</p>
+</blockquote>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
-   </p>
-   <ul class="indent2">
-    <li>
+</p>
+<ul class="indent2">
+<li>
      This grants the character negative levels as a
      <span class="lstobj">
       Special Ability (SA)
@@ -265,12 +264,12 @@ castable)|NegLevels|NegLevels|NegLevels</code>
 with all other special abilities the character has been
 granted.
     </li>
-    <li>
+<li>
      The "%" tag will fill in a number from a variable listed after
 the pipe (|) with each successive "%" being replaced by the next
 variable listed after subsequent pipes.
     </li>
-    <li>
+<li>
      The variable
      <span class="lstvar">
       NegLevels
@@ -280,7 +279,7 @@ by the
      <code>DEFINE</code>
      tag within this feat.
     </li>
-    <li>
+<li>
      The
      <span class="lstobj">
       SA
@@ -288,17 +287,17 @@ by the
      will NOT be displayed if the
 last variable or formula equals "0".
     </li>
-   </ul>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</ul>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>DEFINE:NegLevels|0</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>DEFINE:NegLevels|0</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Creates the
@@ -308,61 +307,61 @@ last variable or formula equals "0".
     variable and initializes it
 to a value of zero.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:CHECKS|Fortitude,Reflex,Will|-1*(NegLevels)</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:CHECKS|Fortitude,Reflex,Will|-1*(NegLevels)</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Subracts the
 number of negative levels granted from the "Fortitude". "Reflex",
 and "Will" saving throws.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<strong>
      Tag Used:
     </strong>
-    <code>BONUS:COMBAT|TOHIT|-1*(NegLevels)</code>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:COMBAT|TOHIT|-1*(NegLevels)</code>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Subtracts the
 number of negative leves granted from the primary attack bonus.
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <blockquote class="indent0">
-    <p class="tagindent3">
-     <strong>
+</blockquote>
+<blockquote class="indent1">
+<blockquote class="indent0">
+<p class="tagindent3">
+<strong>
       Tag Used:
      </strong>
-     <code>BONUS:SKILL|TYPE=Strength,TYPE=Dexterity,TYPE=Constitution,
+<code>BONUS:SKILL|TYPE=Strength,TYPE=Dexterity,TYPE=Constitution,
 TYPE=Intelligence,TYPE=Wisdom,TYPE=Charisma|-1*(NegLevels)</code>
-    </p>
-   </blockquote>
-   <p class="indent1">
-    <strong>
+</p>
+</blockquote>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Subtracts the
 number of negative levels granted from all skills.
    </p>
-  </blockquote>
-  <hr/>
-  <h3>
+</blockquote>
+<hr/>
+<h3>
    Equipment File
   </h3>
-  <p class="indent1">
+<p class="indent1">
    In the
    <span class="lstfile">
     equip.lst
@@ -380,18 +379,18 @@ negative levels through the
    <code>BONUS:VAR</code>
    tag.
   </p>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <a id="vfeat" name="vfeat">
-     <strong>
+<blockquote class="indent1">
+<p class="indent0">
+<a id="vfeat" name="vfeat">
+<strong>
       Tag
 Used:
      </strong>
-     <code>VFEAT:Negative Levels</code>
-    </a>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>VFEAT:Negative Levels</code>
+</a>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Grants the
@@ -406,32 +405,32 @@ the
     variable. (see Feat File
 Entry above.)
    </p>
-  </blockquote>
-  <blockquote class="indent1">
-   <p class="indent0">
-    <a id="bonusvar" name="bonusvar">
-     <strong>
+</blockquote>
+<blockquote class="indent1">
+<p class="indent0">
+<a id="bonusvar" name="bonusvar">
+<strong>
       Tag
 Used:
      </strong>
-     <code>BONUS:VAR|NegLevels|x|PREALIGN:LG,LN,NG,TN,CG,CN</code>
-    </a>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>BONUS:VAR|NegLevels|x|PREALIGN:LG,LN,NG,TN,CG,CN</code>
+</a>
+</p>
+<p class="indent1">
+<strong>
      Variables Used (x):
     </strong>
     Number
 (number of negative levels applied.)
    </p>
-   <p class="indent1">
-    <strong>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
-   </p>
-   <ul class="indent2">
-    <li>
-     <span class="lstvar">
+</p>
+<ul class="indent2">
+<li>
+<span class="lstvar">
       NegLevels
      </span>
      is a variable defined in
@@ -442,10 +441,10 @@ the
      feat specifically
 for this purpose.
     </li>
-    <li>
+<li>
      Use "2", not "-2", to bestow two negative levels.
     </li>
-    <li>
+<li>
      If the
      <span class="lstvar">
       NegLevels
@@ -454,7 +453,7 @@ for this purpose.
 (no negative levels applied), then nothing will show, and it will
 be as if the Negative Levels feat was not granted.
     </li>
-    <li>
+<li>
      PRExxx tags can be used to set requirements for the applicaton
 of the
      <span class="lstvar">
@@ -464,9 +463,9 @@ of the
 PRExxx tag used is the PREALIGN tag, which sets an "Alignment"
 restriction on the associated bonus.
     </li>
-   </ul>
-   <p class="indent1">
-    <strong>
+</ul>
+<p class="indent1">
+<strong>
      Example:
     </strong>
     -
@@ -475,48 +474,48 @@ restriction on the associated bonus.
     </span>
     (RSRD)
    </p>
-   <p class="indent2">
-    <code>BONUS:VAR|NegLevels|1|PREALIGN:LG,LN,NG,TN,CG,CN</code>
-   </p>
-   <p class="indent3">
+<p class="indent2">
+<code>BONUS:VAR|NegLevels|1|PREALIGN:LG,LN,NG,TN,CG,CN</code>
+</p>
+<p class="indent3">
     Demon Armor bestows one negative level to all
 non-evil characters.
    </p>
-  </blockquote>
-  <blockquote class="indent2">
-   <p class="indent0">
-    <a id="prealign" name="prealign">
-     <strong>
+</blockquote>
+<blockquote class="indent2">
+<p class="indent0">
+<a id="prealign" name="prealign">
+<strong>
       Tag
 Used:
      </strong>
-     <code>PREALIGN:LG,LN,NG,TN,CG,CN</code>
-    </a>
-   </p>
-   <p class="indent1">
-    <strong>
+<code>PREALIGN:LG,LN,NG,TN,CG,CN</code>
+</a>
+</p>
+<p class="indent1">
+<strong>
      What it does:
     </strong>
     Sets an
 "Alignment" based restriction upon when the associated bonus will
 be applied.
    </p>
-  </blockquote>
-  <hr/>
-  <h3>
+</blockquote>
+<hr/>
+<h3>
    Known Issues
   </h3>
-  <p class="indent1">
+<p class="indent1">
    None
   </p>
-  <hr/>
-  <h3>
+<hr/>
+<h3>
    LST File Entry Examples
   </h3>
-  <p class="indent1">
+<p class="indent1">
    These examples come from the RSRD.
   </p>
-  <p class="indent1">
+<p class="indent1">
    Feat File:
    <span class="lstobj">
     Negative
@@ -524,65 +523,65 @@ Levels
    </span>
    feat
   </p>
-  <blockquote class="indent2">
-   <p class="tagindent1">
-    <code>Negative Levels</code>
-   </p>
-   <p class="tagindent1">
-    <code>TYPE:Special</code>
-   </p>
-   <p class="tagindent1">
-    <code>VISIBLE:NO</code>
-   </p>
-   <p class="tagindent1">
-    <code>SA:% negative level(s) (-% effective
+<blockquote class="indent2">
+<p class="tagindent1">
+<code>Negative Levels</code>
+</p>
+<p class="tagindent1">
+<code>TYPE:Special</code>
+</p>
+<p class="tagindent1">
+<code>VISIBLE:NO</code>
+</p>
+<p class="tagindent1">
+<code>SA:% negative level(s) (-% effective
 level(s) and loses access to % spell(s) from the highest spell
 level castable)|NegLevels|NegLevels|NegLevels</code>
-   </p>
-   <p class="tagindent1">
-    <code>DEFINE:NegLevels|0</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:CHECKS|Fortitude,Reflex,Will|-1*(NegLevels)</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:COMBAT|TOHIT|-1*(NegLevels)</code>
-   </p>
-   <p class="tagindent1">
-    <code>BONUS:SKILL|TYPE=Strength,TYPE=Dexterity,TYPE=Constitution,
+</p>
+<p class="tagindent1">
+<code>DEFINE:NegLevels|0</code>
+</p>
+<p class="tagindent1">
+<code>BONUS:CHECKS|Fortitude,Reflex,Will|-1*(NegLevels)</code>
+</p>
+<p class="tagindent1">
+<code>BONUS:COMBAT|TOHIT|-1*(NegLevels)</code>
+</p>
+<p class="tagindent1">
+<code>BONUS:SKILL|TYPE=Strength,TYPE=Dexterity,TYPE=Constitution,
 TYPE=Intelligence,TYPE=Wisdom,TYPE=Charisma|-1*(NegLevels)</code>
-   </p>
-  </blockquote>
-  <p class="indent1">
+</p>
+</blockquote>
+<p class="indent1">
    Equipment File:
    <span class="lstobj">
     Demon
 Armor
    </span>
-  </p>
-  <blockquote class="indent2">
-   <p class="tagindent2">
-    <code>Demon Armor</code>
-   </p>
-   <p class="tagindent2">
+</p>
+<blockquote class="indent2">
+<p class="tagindent2">
+<code>Demon Armor</code>
+</p>
+<p class="tagindent2">
     .
    </p>
-   <p class="tagindent2">
+<p class="tagindent2">
     . (See the RSRD for full detail on this
 item.)
    </p>
-   <p class="tagindent2">
+<p class="tagindent2">
     .
    </p>
-   <p class="tagindent2">
-    <code>VFEAT:Negative Levels</code>
-   </p>
-   <p class="tagindent2">
-    <code>BONUS:VAR|NegLevels|1|PREALIGN:LG,LN,NG,TN,CG,CN</code>
-   </p>
-  </blockquote>
-  <hr/>
-  <p>
-  </p>
- </body>
+<p class="tagindent2">
+<code>VFEAT:Negative Levels</code>
+</p>
+<p class="tagindent2">
+<code>BONUS:VAR|NegLevels|1|PREALIGN:LG,LN,NG,TN,CG,CN</code>
+</p>
+</blockquote>
+<hr/>
+<p>
+</p>
+</body>
 </html>

@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <!--
+<!--
     PCGen Documentation Project
 
     $Author: karianna $
@@ -14,19 +13,19 @@
     Description:
     Provides information on FreeMarker based Character Output Sheets.
   -->
- <head>
-  <meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
-  <title>
+<head>
+<meta content="HTML Tidy for Cygwin (vers 25 March 2009), see www.w3.org" name="generator"/>
+<title>
    FreeMarker Output
   </title>
-  <link href="../pcgen.css" rel="stylesheet" type="text/css"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
- </head>
- <body>
-  <h1>
+<link href="../pcgen.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>
    Creating a FreeMarker Output Sheet
   </h1>
-  <p>
+<p>
    FreeMarker sheets are detected by PCGen by their file name
 suffix. A template ending in
    <b>
@@ -35,7 +34,7 @@ suffix. A template ending in
    will be processed by
 FreeMarker rather than by PCGen's legacy output engine.
   </p>
-  <p>
+<p>
    The extension of the file to be produced should be immediately
 before that and preceded by a . or -. So a template to produce html
 output might be named csheet-first.html.ftl or
@@ -43,46 +42,46 @@ chseet-compact-html.ftl and PCGen would pick up that it was a
 template to be processed by FreeMarker template that would produce
 output of a html file.
   </p>
-  <p>
+<p>
    Inside the sheet, the file is just a text file, with functions
 or directives included when needed to produce dynamic output. It is
 often simplest to start with a static file that looks like the
 output you want and then gradually introduce FreeMarker tags to
 make the sheet show the character info.
   </p>
-  <h3>
+<h3>
    FreeMarker Documentation
   </h3>
-  <p>
+<p>
    FreeMarker has quite thorough documentation. The main references
 output sheet authors will use are:
   </p>
-  <ol>
-   <li>
-    <a class="external text" href="http://freemarker.org/docs/dgui.html" rel="nofollow">
+<ol>
+<li>
+<a class="external text" href="http://freemarker.org/docs/dgui.html" rel="nofollow">
      Template Author's
 Guide
     </a>
-   </li>
-   <li>
-    <a class="external text" href="http://freemarker.org/docs/ref.html" rel="nofollow">
+</li>
+<li>
+<a class="external text" href="http://freemarker.org/docs/ref.html" rel="nofollow">
      Reference Guide
     </a>
-   </li>
-   <li>
-    <a class="external text" href="http://freemarker.org/" rel="nofollow">
+</li>
+<li>
+<a class="external text" href="http://freemarker.org/" rel="nofollow">
      Main FreeMarker page
     </a>
-   </li>
-  </ol>
-  <p>
+</li>
+</ol>
+<p>
    In addition, see testsuite/base-xml.ftl for a fully worked
 example of xml output.
   </p>
-  <h3>
+<h3>
    Conversion from Legacy Output Engine
   </h3>
-  <p>
+<p>
    A Groovy script is available to convert a legacy PCGen sheet to
 FreeMarker. Get the script from
    <a href="https://raw.githubusercontent.com/PCGen/pcgen/master/code/convfreemarker.groovy">
@@ -94,10 +93,10 @@ FreeMarker. Get the script from
    </a>
    .
   </p>
-  <p>
+<p>
    The script is run using the command
   </p>
-  <pre>
+<pre>
 groovy convfreemarker.groovy sheetname [outputtemplatename]
 </pre>
   where
@@ -118,35 +117,35 @@ convfreemarker.groovy base.xml would produce base.xml.ftl
    The following are the main steps that need to be made for manual
 conversion:
   </p>
-  <ol>
-   <li>
+<ol>
+<li>
     Replace FOR loops with @loop directives. e.g.
 |FOR,%class,0,COUNT[CLASSES]-1,1,0| becomes &lt;@loop from=0
 to=pcvar('count("CLASSES")')-1 ; class , class_has_next &gt;
    </li>
-   <li>
+<li>
     Replace IF tests with FreeMarker if tests. This will often need
 the use of pcvar and pcboolean functions to access character
 information.
    </li>
-   <li>
+<li>
     Replace filters with FreeMarker if tests.
    </li>
-   <li>
+<li>
     Replace each old tag with a call to pcstring. e.g. |PLAYERNAME|
 becomes ${pcstring('PLAYERNAME')}
    </li>
-   <li>
+<li>
     Replace loop variables in tags with variable references. e.g.
 |CLASSABB.%class| becomes ${pcstring('CLASSABB.${class}')}
    </li>
-  </ol>
-  <p>
+</ol>
+<p>
    Manual tidy up will then be required including extracting
 repeated content to macros.
   </p>
-  <hr/>
-  <p>
-  </p>
- </body>
+<hr/>
+<p>
+</p>
+</body>
 </html>
