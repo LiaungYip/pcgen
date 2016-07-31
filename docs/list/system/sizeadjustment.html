@@ -12,41 +12,6 @@
 <link href="../../pcgen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="toc">
-<ul class="incremental">
-<li>
-<a href="/list/system/size-adjustment.html#game-mode-sizeadjustment.lst">
-      Game Mode: sizeAdjustment.lst
-     </a>
-<ul class="incremental">
-<li>
-<a href="/list/system/size-adjustment.html#structure-of-the-sizeadjustment.lst-file">
-        Structure of the
-        <code>sizeAdjustment.lst</code>
-        file
-       </a>
-</li>
-<li>
-<a href="/list/system/size-adjustment.html#tags">
-        Tags
-       </a>
-</li>
-<li>
-<a href="/list/system/size-adjustment.html#global-bonus-tags-which-are-useful-in-sizeadjustment.lst">
-        Global BONUS tags which are useful in
-        <code>sizeAdjustment.lst</code>
-</a>
-</li>
-<li>
-<a href="/list/system/size-adjustment.html#bonus-tags-specific-to-sizeadjustment.lst">
-        BONUS tags specific to
-        <code>sizeAdjustment.lst</code>
-</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
 <h1 id="game-mode-sizeadjustment.lst">
    Game Mode: sizeAdjustment.lst
   </h1>
@@ -126,11 +91,39 @@ SIZENAME:S
   →  BONUS:STAT|DEX|-2|PREBASESIZELT:Small|PREVAREQ:BypassSizeMods,0
 SIZENAME:S
   →  SIZENUM:040</code></pre>
-<hr/>
 <h2 id="tags">
    Tags
   </h2>
-<h3 id="abb">
+<ul>
+    <li>SIZENAME lines</li>
+    <ul>
+        <li><a href="#abb">ABB</a> (abbreviation) - optional</li>
+        <li><a href="#isdefaultsize">ISDEFAULTSIZE</a> - optional</li>
+        <li><a href="#sizename">SIZENAME</a> - mandatory - each line must begin with SIZENAME.</li>
+        <li><a href="#sizenum">SIZENUM</a> - mandatory</li>
+    </ul>
+    <li>BONUS tags specific to <code>sizeAdjustment.lst</code></li>
+    <ul>
+        <li><a href="#bonusacvalue">BONUSACVALUE</a></li>
+        <li><a href="#bonusitemcapacity">BONUSITEMCAPACITY</a></li>
+        <li><a href="#bonusitemcost">BONUSITEMCOST</a></li>
+        <li><a href="#bonusitemweight">BONUSITEMWEIGHT</a></li>
+        <li><a href="#bonusloadmult">BONUSLOADMULT</a></li>
+     </ul>
+    <li>All global <code>BONUS</code> tags may be used in <code>sizeAdjustment.lst</code>. Some useful tags include:</li>
+    <ul>
+        <li><code>BONUS:COMBAT|AC|1|TYPE=Size</code>- grant a +1 size AC bonus due to size.</li>
+        <li><code>BONUS:COMBAT|TOHIT|1|Type=Size</code> - grant a +1 attack bonus due to size.</li>
+        <li><code>BONUS:COMBAT|TOHIT.GRAPPLE|5|Type=Size</code> - grant a bonus on Grapple checks due to large size.</li>
+        <li><code>BONUS:SKILL|Hide|4|TYPE=Size</code> - grant a bonus on Hide checks due to small size.</li>
+    </ul>
+</ul>
+
+<hr/>
+
+<div id="tag_docs">
+<a id="abb" name="abb" />
+<h3>
    ABB
   </h3>
 <p>
@@ -172,7 +165,8 @@ SIZENAME:S
    .
   </p>
 <hr/>
-<h3 id="isdefaultsize">
+<a id="isdefaultsize" name="isdefaultsize" />
+<h3>
    ISDEFAULTSIZE
   </h3>
 <p>
@@ -235,7 +229,8 @@ SIZENAME:S
    is assumed.
   </p>
 <hr/>
-<h3 id="sizename">
+<a id="sizename" name="sizename" />
+<h3>
    SIZENAME
   </h3>
 <p>
@@ -315,7 +310,8 @@ SIZENAME:S
    .
   </p>
 <hr/>
-<h3 id="sizenum">
+<a id="sizenum" name="sizenum" />
+<h3>
    SIZENUM
   </h3>
 <p>
@@ -395,52 +391,10 @@ SIZENAME:H  SIZENUM:070
 SIZENAME:G  SIZENUM:080
 SIZENAME:C  SIZENUM:090
 SIZENAME:P  SIZENUM:100</code></pre>
+
 <hr/>
-<h2 id="global-bonus-tags-which-are-useful-in-sizeadjustment.lst">
-   Global BONUS tags which are useful in
-   <code>sizeAdjustment.lst</code>
-</h2>
-<p>
-   All global
-   <code>BONUS</code>
-   tags may be used in
-   <code>sizeAdjustment.lst</code>
-   .
-  </p>
-<p>
-   Some useful tags include:
-  </p>
-<ul class="incremental">
-<li>
-<code>BONUS:COMBAT|AC|1|TYPE=Size</code>
-    - grant a +1 size AC bonus due to size.
-   </li>
-<li>
-<code>BONUS:COMBAT|TOHIT|1|Type=Size</code>
-    - grant a +1 attack bonus due to size.
-   </li>
-<li>
-<code>BONUS:COMBAT|TOHIT.GRAPPLE|5|Type=Size</code>
-    - grant a bonus on Grapple checks due to large size.
-   </li>
-<li>
-<code>BONUS:SKILL|Hide|4|TYPE=Size</code>
-    - grant a bonus on Hide checks due to small size.
-   </li>
-</ul>
-<hr/>
-<h2 id="bonus-tags-specific-to-sizeadjustment.lst">
-   BONUS tags specific to
-   <code>sizeAdjustment.lst</code>
-</h2>
-<p>
-   The following
-   <code>BONUS</code>
-   tags function only in the
-   <code>sizeAdjustment.lst</code>
-   file.
-  </p>
-<h3 id="bonusacvalue">
+<a id="bonusacvalue" name="bonusacvalue" />
+<h3>
    BONUS:ACVALUE
   </h3>
 <p>
@@ -450,6 +404,7 @@ SIZENAME:P  SIZENUM:100</code></pre>
    <code>Shield</code>
    , based on the creature's size.
   </p>
+  <p>Only works in <code>sizeAdjustment.lst</code>.</p>
 <h4 id="status-2">
    Status
   </h4>
@@ -521,11 +476,12 @@ SIZENAME:P  SIZENUM:100</code></pre>
    Doubles the benefit from armour and shields.
   </p>
 <hr/>
-<h3 id="bonusitemcapacity">
+<a id="bonusitemcapacity" name="bonusitemcapacity" />
+<h3>
    BONUS:ITEMCAPACITY
   </h3>
 <p>
-   Changes the "item carrying capacity" based on the size of the character.
+   Changes the "item carrying capacity" based on the size of the character. 
   </p>
 <p>
    This is used to implement the DnD 3.5 rule for equipment made in different sizes for different creatures, such as backpacks and bed-rolls. These items
@@ -542,6 +498,7 @@ SIZENAME:P  SIZENUM:100</code></pre>
    </a>
    )
   </p>
+  <p>Only works in <code>sizeAdjustment.lst</code>.</p>
 <h4 id="status-3">
    Status
   </h4>
@@ -618,7 +575,8 @@ SIZENAME:P  SIZENUM:100</code></pre>
    to double the normal value.
   </p>
 <hr/>
-<h3 id="bonusitemcost">
+<a id="bonusitemcost" name="bonusitemcost" />
+<h3>
    BONUS:ITEMCOST
   </h3>
 <p>
@@ -635,6 +593,7 @@ SIZENAME:P  SIZENUM:100</code></pre>
    </a>
    as medium-sized armour.
   </p>
+  <p>Only works in <code>sizeAdjustment.lst</code>.</p>
 <h4 id="status-4">
    Status
   </h4>
@@ -717,7 +676,8 @@ SIZENAME:P  SIZENUM:100</code></pre>
    Doubles the costs of all items of type Alchemical, Liquid, Clothing, or Food.
   </p>
 <hr/>
-<h3 id="bonusitemweight">
+<a id="bonusitemweight" name="bonusitemweight" />
+<h3>
    BONUS:ITEMWEIGHT
   </h3>
 <p>
@@ -730,6 +690,7 @@ SIZENAME:P  SIZENUM:100</code></pre>
    </a>
    as armour for medium-sized creatures.
   </p>
+  <p>Only works in <code>sizeAdjustment.lst</code>.</p>
 <h4 id="status-5">
    Status
   </h4>
@@ -776,7 +737,8 @@ SIZENAME:P  SIZENUM:100</code></pre>
    items, such as backpacks and bedrolls, to one-quarter the normal value.
   </p>
 <hr/>
-<h3 id="bonusloadmult">
+<a id="bonusloadmult" name="bonusloadmult" />
+<h3>
    BONUS:LOADMULT
   </h3>
 <p>
@@ -797,6 +759,7 @@ SIZENAME:P  SIZENUM:100</code></pre>
    <code>BONUS:LOADMULT</code>
    tag is used to implement rules for creatures with four legs having greater load-carrying capacity.
   </p>
+  <p>Only works in <code>sizeAdjustment.lst</code>.</p>
 <h4 id="status-6">
    Status
   </h4>
@@ -819,9 +782,9 @@ SIZENAME:P  SIZENUM:100</code></pre>
     file to determine the "effective" carrying capacity multiplier, relative to a normal sized creature.
    </li>
 </ul>
-<h5 id="examples-3">
+<h4 id="examples-3">
    Examples
-  </h5>
+  </h4>
 <ul class="incremental">
 <li>
 <code>SIZENAME:H  →  BONUS:LOADMULT|TYPE=SIZE|2</code>
@@ -852,5 +815,6 @@ SIZENAME:P  SIZENUM:100</code></pre>
 <p>
    Like the above, but will only apply if the creature has at least four legs.
   </p>
+</div>
 </body>
 </html>

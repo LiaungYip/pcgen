@@ -27,32 +27,49 @@
    Game Mode: statsandchecks.lst
   </h1>
 <p class="indent0">
-   This page is broken down ito four sections:
-   <a href="/list/system/gamemode-statsandchecks.html#stats">
-    STATNAME Line
-   </a>
-   ,
-   <a href="/list/system/gamemode-statsandchecks.html#checks">
-    CHECKNAME
-Line
-   </a>
-   ,
-   <a href="/list/system/gamemode-statsandchecks.html#spells">
-    BONUSSPELLLEVEL Line
-   </a>
-   , and
-   <a href="/list/system/gamemode-statsandchecks.html#alignment">
-    ALIGNMENTNAME Line
-   </a>
-   .
+   This page is broken down into four sections:
+   
+   
+   
+   
   </p>
+
+<ul>
+    <li>STATNAME Line</li>
+    <ul>
+        <li><a href="/list/system/gamemode-statsandchecks.html#statname">STATNAME</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#abb">ABB</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#abilityaddspelllevel">ABILITYADDSPELLLEVEL</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonus">BONUS</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonushp">BONUSHP</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonuslang">BONUSLANG</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonusmodskillpoints">BONUSMODSKILLPOINTS</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#definemaxlevelstat">DEFINEMAXLEVELSTAT</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#statmod">STATMOD</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#statrange">STATRANGE</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#penaltyvar">PENALTYVAR</a></li>
+    </ul>
+    <li>CHECKNAME Line</li>
+    <ul>
+
+        <li><a href="/list/system/gamemode-statsandchecks.html#checkname">CHECKNAME</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonuschecks">BONUSCHECKS</a></li>
+    </ul>
+    <li>BONUSSPELLLEVEL Line -    This section is used to implement Bonus Spells by ability or level.</li>
+    <ul>
+        <li><a href="/list/system/gamemode-statsandchecks.html#bonusspelllevel">BONUSSPELLLEVEL</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#basestatscore">BASESTATSCORE</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#statrange2">STATRANGE2</a></li>
+    </ul>
+    <li>ALIGNMENTNAME Line</li>
+    <ul>
+        <li><a href="/list/system/gamemode-statsandchecks.html#alignmentname">ALIGNMENTNAME</a></li>
+        <li><a href="/list/system/gamemode-statsandchecks.html#abb2">ABB2</a></li>
+    </ul>
+</ul>
+
 <hr/>
-<h2>
-<a id="stats" name="stats">
-    STATNAME Line
-   </a>
-</h2>
-<hr/>
+<div id="tag_docs">
 <p class="indent0">
 <strong>
 <a id="statname" name="statname">
@@ -643,12 +660,6 @@ deprecated 6.03 - Remove for 6.6
    </strong>
 </p>
 <hr/>
-<h2>
-<a id="checks" name="checks">
-    CHECKNAME Line
-   </a>
-</h2>
-<hr/>
 <p class="indent0">
 <strong>
 <a id="checkname" name="checkname">
@@ -757,16 +768,6 @@ lines, besides the CHECKNAME tag itself).
 <code>CHECKNAME:Fortitude
 BONUS:CHECKS|FORTITUDE|CON</code>
 </p>
-<hr/>
-<h2>
-<a id="spells" name="spells">
-    BONUSSPELLLEVEL Line
-   </a>
-</h2>
-<p>
-   This section is used to implement Bonus Spells by ability or
-level.
-  </p>
 <hr/>
 <p class="indent0">
 <strong>
@@ -915,12 +916,6 @@ spell is given.
 STATRANGE:8</code>
 </p>
 <hr/>
-<h2>
-<a id="alignment" name="alignment">
-    ALIGNMENTNAME Line
-   </a>
-</h2>
-<hr/>
 <p class="indent0">
 <strong>
 <a id="alignmentname" name="alignmentname">
@@ -1021,8 +1016,6 @@ necessarily have to be 2 letters, it can be longer.
 <code>ALIGNMENTNAME: Lawful Good
 ABB:LG</code>
 </p>
-<hr/>
-<p>
-</p>
+</div>
 </body>
 </html>
